@@ -1,51 +1,38 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-
-
  /* Nav Bar */
+
+.nav-wrapper {
+  background-color: rgb(36, 3, 6);
+}
 
 .nav-wrapper li{
   padding-right: 20px;
+  font-family: "Special Elite";
 }
 
 a.brand-logo {
   padding-left: 20px;
+  font-family: "Special Elite";
 }
 
  /* Items Page (Items#Index, Categories#Show) */
 
-    /* Categories Side Bar */
+/* Categories Side Bar */
 
-    .categories-side-bar {
-      border: 1px dotted black;
-      height: 600px;
+.categories-side-bar {
+  border: 1px dotted black;
+  height: 600px;
+  font-family: "Special Elite";
+}
 
-    }
+/* Items Section */
 
-    /* Items Section */
+.items {
+  padding: 10px;
+}
 
-    .items {
-      padding: 10px;
-    }
-
-    #add-to-duffel-btn {
-      margin-left: 16px;
-    }
-
+#add-to-duffel-btn {
+  margin-left: 16px;
+}
 
 
  /* Item Cards */
@@ -54,4 +41,15 @@ a.brand-logo {
   width: 250px;
   display: inline-block;
   margin: 10px;
+}
+
+/*Background*/
+
+body {
+  background-image: url(cracked_paper.jpg);
+  background-position: -200px -20px;
+}
+
+#index-header {
+  font-family: "Special Elite"
 }
