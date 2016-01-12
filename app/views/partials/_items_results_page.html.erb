@@ -18,7 +18,7 @@
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4"><%= item.title %></span>
         <span class="right card-title activator grey-text text-darken-4 card-price"><%= item.price %></span>
-        <a id="add-to-duffel-btn" class="waves-effect waves-light btn">Add To Duffel</a>
+        <%= link_to "Add to Duffel", duffel_items_path(item_id: item.id), method: :post, id: "add-to_duffel-btn", class: "waves-effect waves-light btn" %>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"><%= item.title %><i class="material-icons right">close</i></span>
