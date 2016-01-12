@@ -39,6 +39,8 @@ a.brand-logo {
 
 .card {
   width: 250px;
+  display: inline-block;
+  margin: 10px;
 }
 
 /*Background*/
