@@ -32,6 +32,7 @@ a.brand-logo {
 
 #add-to-duffel-btn {
   margin-left: 16px;
+  margin-top: 30px;
 }
 
 
@@ -39,6 +40,7 @@ a.brand-logo {
 
 .card {
   width: 250px;
+  height: 320px;
   display: inline-block;
   margin: 10px;
 }
