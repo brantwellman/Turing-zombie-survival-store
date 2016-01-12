@@ -1,0 +1,15 @@
+<h1>The Contents of your Duffel Bag</h1>
+
+<% @duffel.duffel_items.each do |item| %>
+  <div class="">
+    <%= image_tag(item.image) %>
+    <%= item.title %>
+    <%= item.description %>
+    <%= item.price %>
+    <%= @duffel.count_of(item.id) %>
+  </div>
+<% end %>
+
+<div class="">
+  Subtotal: $<%= @duffel.subtotal %>
+</div>
