@@ -1,0 +1,8 @@
+<h1>Everything you could possibly need to survive....</h1>
+<h3>Not a single thing missing, nope</h3>
+
+<% @items.each do |item| %>
+  <%= image_tag item.image %>
+  <%= item.title %>
+  <%= item.price %>
+<% end %>
