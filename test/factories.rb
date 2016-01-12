@@ -23,6 +23,6 @@ FactoryGirl.define do
   end
 
   sequence :price do |n|
-    n.to_f
+    n.to_i
   end
 end
