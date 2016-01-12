@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+ /* Nav Bar */
+
+.nav-wrapper li{
+  padding-right: 20px;
+}
+
+a.brand-logo {
+  padding-left: 20px;
+}
+
+ /* Items Page (Items#Index, Categories#Show) */
+
+    /* Categories Side Bar */
+
+    .categories-side-bar {
+      border: 1px dotted black;
+      height: 600px;
+
+    }
+
+    /* Items Section */
+
+    .items {
+      padding: 10px;
+    }
+
+    #add-to-duffel-btn {
+      margin-left: 16px;
+    }
+
+
+
+ /* Item Cards */
+
+.card {
+  width: 250px;
+}
