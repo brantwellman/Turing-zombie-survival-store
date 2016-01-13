@@ -6,4 +6,8 @@ class DuffelItemsController < ApplicationController
     flash[:notice] = "We stuffed #{item.title} in your Go-Bag"
     redirect_to items_path
   end
+
+  def index
+    @items = @duffel.duffel_items
+  end
 end

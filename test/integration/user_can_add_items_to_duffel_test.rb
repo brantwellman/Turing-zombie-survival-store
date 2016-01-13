@@ -10,13 +10,14 @@ class UserCanAddItemsToDuffel < ActionDispatch::IntegrationTest
     assert page.has_link? "Add to Duffel"
     click_link "Add to Duffel"
     click_link "Add to Duffel"
+    click_link "My Duffel"
 
     assert "/duffel", current_path
     assert page.has_content? item.title
     assert page.has_content? item.description
     assert page.has_content? item.price
     assert page.has_css?("img[src='#{item.image}']")
-    assert page.has_content? 3
+    assert page.has_content? "Subtotal: $#{item.price.to_i * 2}"
 
   end
 end
