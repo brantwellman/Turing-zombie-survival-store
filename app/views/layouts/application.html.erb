@@ -35,7 +35,7 @@
             <li><%= link_to "Login", login_path %></li>
             <li><%= link_to "Create Account", new_user_path %></li>
           <% end %>
-        
+
         <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -43,9 +43,11 @@
     </div>
   </nav>
 
-  <% flash.each do |type, msg| %>
-    <%= content_tag :div, msg %>
-  <% end %>
+  <div class="flashes">
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg %>
+    <% end %>
+  </div>
 
 <%= yield %>
 

@@ -157,3 +157,57 @@ a.brand-logo {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/*Forms*/
+
+#login-form, #new-user-form {
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  width: 50%;
+}
+
+#new-user-form {
+  margin-top: 40px;
+}
+
+.form-text {
+  color: black;
+  font-size: 1.2em;
+}
+
+/*Flash Notices*/
+
+.flashes {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+/*User Dashboard*/
+
+.user-card {
+  width: 400px;
+  height: 500px;
+  display: inline-block;
+  margin: 10px;
+  background-color: rgba(219, 211, 202, .6);
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.user-name {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.8em;
+}
