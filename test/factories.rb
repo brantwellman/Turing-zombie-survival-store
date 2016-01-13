@@ -31,11 +31,11 @@ FactoryGirl.define do
   end
 
   sequence :first_name do |n|
-    "First Name #{n}"
+    "First name #{n}"
   end
 
   sequence :last_name do |n|
-    "Last Name #{n}"
+    "Last name #{n}"
   end
 
   sequence :email do |n|

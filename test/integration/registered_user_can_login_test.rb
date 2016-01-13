@@ -8,10 +8,10 @@ class RegisteredUserCanLoginTest < ActionDispatch::IntegrationTest
     click_link "Login"
     fill_in "Email", with: user.email
     fill_in "Password", with: "password"
-    click_link "Login"
+    click_button "Login"
 
     assert_equal dashboard_path, current_path
-    assert page.has_content? "#{user.first_name user.last_name}"
-    assert page.has_content? "Logged in as #{user.first_name}"
+    assert page.has_content?("#{user.first_name}")
+    assert page.has_content?("Logged in as #{user.first_name}")
   end
 end

@@ -1,7 +1,7 @@
 require "test_helper"
 
 class AuthenticatedUserTest < ActionDispatch::IntegrationTest
-  test "a user can create an account and then sees logout button" do
+  test "user can create account and then see logout button and logout" do
     item = create(:item)
     visit items_path
     click_link "Add to Duffel"
@@ -23,7 +23,7 @@ class AuthenticatedUserTest < ActionDispatch::IntegrationTest
 
     assert_equal "/dashboard", current_path
 
-    assert page.has_content? "Logged in as Penney" #assert this is in a CSS div
+    assert page.has_content? "Logged in as Penney"
     assert page.has_content? "Penney Gadget"
     assert page.has_content? "theworldisending@uhoh.com"
     refute page.has_content? "Login"
