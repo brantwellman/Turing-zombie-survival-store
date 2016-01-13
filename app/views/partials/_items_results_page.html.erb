@@ -2,30 +2,39 @@
 
   <div class="center-align categories-side-bar col s3">
     <h3>Categories</h3>
+    <div>
+      <%= link_to "All Items", items_path, class:"btn black category-link first-link" %>
+    </div>
+    <% all_categories.each do |category| %>
+      <div>
+        <%= link_to category.title.capitalize, category_path(category.title), class:"btn black category-link" %>
+      </div>
+    <% end %>
   </div> <!--end of categories side bar -->
 
-  <div class="items col s9">
+  <div class="items-column col s9">
+    <h1 class="center-align index-h1">Everything you could possibly need to survive....</h1>
+    <h3 class="center-align">Not a single thing missing, nope.</h3>
 
-
-  <h1 class="center-align", id="index-header">Everything you could possibly need to survive....</h1>
-  <h3 class="center-align", id="index-header">Not a single thing missing, nope</h3>
-
-  <% target.each do |item| %>
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src=<%= item.image %>>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><%= item.title %></span>
-        <span class="right card-title activator grey-text text-darken-4 card-price"><%= item.price %></span>
-        <%= link_to "Add to Duffel", duffel_items_path(item_id: item.id), method: :post, id: "add-to_duffel-btn", class: "waves-effect waves-light btn" %>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"><%= item.title %><i class="material-icons right">close</i></span>
-        <p><%= item.description %></p>
-      </div>
-    </div>
-  <% end %>
-
-  </div> <!-- end of items column -->
+    <div class="items-container">
+      <% target.each do |item| %>
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src=<%= item.image %>>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%= item.title %></span>
+            <span class="right card-title activator grey-text text-darken-4 card-price"><%= item.price %></span>
+            <div class="center-align">
+              <%= link_to "Add to Duffel", duffel_items_path(item_id: item.id), method: :post, class: "black center-align waves-effect waves-light btn site-font" %>
+            </div>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><%= item.title %><i class="material-icons right">close</i></span>
+            <p><%= item.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div> <!-- end of Items Container -->
+  </div> <!-- end of Items Column -->
 </div> <!-- end of row -->

@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :items, only: [:index]
   resources :duffel_items, only: [:create]
+  resources :categories, only: [:show], param: :title
 
   get "/", to: "home#welcome"
   get "/dashboard", to: "users#show"
-  get "/categories/:title", to: "categories#show"
-  # get "/duffel"
+  get "/duffel", to: "duffel_items#index"
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
