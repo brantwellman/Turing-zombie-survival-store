@@ -23,7 +23,7 @@ class AuthenticatedUserTest < ActionDispatch::IntegrationTest
 
     assert_equal "/dashboard", current_path
 
-    assert page.has_content? "Logged in as Penney" #what the #%*@&! is the syntax for testing this is in the CSS navbar?
+    assert page.has_content? "Logged in as Penney" #assert this is in a CSS div
     assert page.has_content? "Penney Gadget"
     assert page.has_content? "theworldisending@uhoh.com"
     refute page.has_content? "Login"

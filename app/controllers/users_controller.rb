@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Account Created!"
+      flash[:notice] = "Logged in as #{@user.first_name}"
       redirect_to dashboard_path
     else
       flash.now[:error] = @user.errors.full_messages.join(", ")
-      render "/"
+      render :new
     end
   end
 
