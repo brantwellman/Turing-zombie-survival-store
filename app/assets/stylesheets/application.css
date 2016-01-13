@@ -108,12 +108,16 @@ a.brand-logo {
   height: 180px;
 }
 
+.item-title {
+  font-size: 1.1em;
+}
+
 .site-font {
   font-family: "Special Elite";
 }
 
-.card-content {
-  font-size: .8em;
+.add-to-duffel a{
+  margin-top: 10px;
 }
 
 

@@ -23,14 +23,15 @@
             <img class="activator" src=<%= item.image %>>
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><%= item.title %></span>
-            <span class="right card-title activator grey-text text-darken-4 card-price"><%= item.price %></span>
-            <div class="center-align">
+            <span class="item-title activator grey-text text-darken-4"><%= item.title %></span>
+            <span class="right activator grey-text text-darken-4 card-price"><%= item.price %></span>
+            <div class="add-to-duffel center-align">
               <%= link_to "Add to Duffel", duffel_items_path(item_id: item.id), method: :post, class: "black center-align waves-effect waves-light btn site-font" %>
             </div>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= item.title %><i class="material-icons right">close</i></span>
+            <strong><%= item.title %></strong>
             <p><%= item.description %></p>
           </div>
         </div>
