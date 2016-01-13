@@ -1,15 +1,60 @@
-<h1>The Contents of your Duffel Bag</h1>
+<div class="container center">
+  <h1>The Contents of your Duffel Bag</h1>
+</div>
 
-<% @duffel.duffel_items.each do |item| %>
-  <div class="">
-    <%= image_tag(item.image) %>
-    <%= item.title %>
-    <%= item.description %>
-    <%= item.price %>
-    <%= @duffel.count_of(item.id) %>
-  </div>
-<% end %>
+<table class="container bordered highlight">
+  <thead>
+    <tr class="duffel-table table-headers">
+        <th class="item-header" data-field="image">Item</th>
+        <th data-field="item"></th>
+        <th class="center" data-field="quantity">Quantity</th>
+        <th class="center" data-field="price">Price</th>
+        <th class="center" data-field="total">Total</th>
+    </tr>
+  </thead>
 
-<div class="">
-  Subtotal: $<%= @duffel.subtotal %>
+  <tbody>
+    <% @duffel.duffel_items.each do |item| %>
+      <tr class="duffel-table">
+        <td>
+          <div class="cart-image center">
+            <%= image_tag(item.image) %>
+          </div>
+        </td>
+
+        <td>
+          <div class="cart-item-info">
+            <p><strong><%= item.title %></strong></p>
+            <p><%= item.description %></p>
+          </div>
+        </td>
+
+        <td class="center">
+          <i class="tiny material-icons quantity-button">remove_circle_outline</i>
+          <%= @duffel.count_of(item.id) %>
+          <i class="tiny material-icons quantity-button">add_circle_outline</i>
+        </td>
+
+        <td class="center">$<%= item.price %></td>
+
+        <td class="center">$<%= (@duffel.count_of(item.id) * item.price) %></td>
+        <!--REMOVE THIS ITEM_SUBTOTAL LOGIC - EXTRACT TO DUFFEL MODEL-->
+      </tr>
+    <% end %>
+    <tr class="duffel-table">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="table-headers right-align">
+        <strong>Subtotal:</strong>
+      </td>
+      <td id="subtotal" class="center">
+        $<%= @duffel.subtotal %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="checkout">
+  <%= link_to "Checkout", duffel_path, class:"btn black" %>
 </div>

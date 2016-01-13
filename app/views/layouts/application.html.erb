@@ -15,24 +15,26 @@
 <body>
 
   <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content">
+  <ul id="dropdown1" class="dropdown-content black">
     <% all_categories.each do |category| %>
-    <li><%= link_to category.title.capitalize, url: "/categories/#{category.title}" %></li>
+    <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
     <li class="divider"></li>
     <% end %>
   </ul>
+  <!-- Dropdown Structure -->
+
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Aberzombie & Fitch</a>
+      <%= link_to "Aberzombie & Fitch", items_path, class:"brand-logo" %>
       <ul class="right hide-on-med-and-down">
         <li>Login</li>
-        <li>My Duffel <%= link_to "My Duffel", duffel_path %></li>
+        <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
-
       </ul>
     </div>
   </nav>
+
   <% flash.each do |type, msg| %>
     <%= content_tag :div, msg %>
   <% end %>
