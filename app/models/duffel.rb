@@ -42,4 +42,9 @@ class Duffel
       }
     end
   end
+
+  def item_subtotal(item_id)
+    item = Item.find(item_id)
+    contents[item_id.to_s] * item.price
+  end
 end
