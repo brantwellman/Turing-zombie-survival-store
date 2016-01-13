@@ -10,11 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 
 /* Background */
+
 
 body {
   background-image: url('cracked_paper.jpg');
@@ -108,16 +109,12 @@ a.brand-logo {
   height: 180px;
 }
 
-.item-title {
-  font-size: 1.1em;
-}
-
 .site-font {
   font-family: "Special Elite";
 }
 
-.add-to-duffel a{
-  margin-top: 10px;
+.card-content {
+  font-size: .8em;
 }
 
 
