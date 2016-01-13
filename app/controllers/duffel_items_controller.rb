@@ -10,4 +10,8 @@ class DuffelItemsController < ApplicationController
   def index
     @items = @duffel.duffel_items
   end
+
+  def update
+    binding.pry
+  end
 end
