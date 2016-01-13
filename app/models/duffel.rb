@@ -18,6 +18,7 @@ class Duffel
     contents[item_id.to_s]
   end
 
+# need access, to price, quantity, and total that is inside of item_prices - for each item
   def subtotal
     item_prices = contents.map do |item_id, quantity|
       item = Item.find(item_id)
