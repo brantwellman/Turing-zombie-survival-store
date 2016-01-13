@@ -34,6 +34,10 @@
     </div>
   </nav>
 
+  <% if current_user %>
+    Logged in as <%= current_user.first_name %>
+  <% end %>
+  
 <%= yield %>
 
 <!--Import jQuery before materialize.js-->
