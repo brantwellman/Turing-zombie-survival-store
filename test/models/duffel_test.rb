@@ -43,27 +43,6 @@ class DuffelTest < ActiveSupport::TestCase
     assert_equal sum, duffel.subtotal
   end
 
-  test "returns price and quantity for each item" do
-    item1, item2 = create_list(:item, 2)
-    duffel = Duffel.new({ "#{item1.id}" => 1, "#{item2.id}" => 2 })
-
-    expected = [
-      {
-        title: item1.title,
-        price: item1.price,
-        quantity: 1,
-        subtotal: item1.price
-      },
-      { title: item2.title,
-        price: item2.price,
-        quantity: 2,
-        subtotal: (item2.price * 2)
-      }
-    ]
-
-    assert_equal expected, duffel.item_details
-  end
-
   test "returns subtotal for the item" do
     item1, item2 = create_list(:item, 2)
     duffel = Duffel.new("#{item1.id}" => 1, "#{item2.id}" => 2)
