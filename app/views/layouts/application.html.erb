@@ -43,9 +43,11 @@
     </div>
   </nav>
 
-  <% flash.each do |type, msg| %>
-    <%= content_tag :div, msg %>
-  <% end %>
+  <div class="flashes">
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg %>
+    <% end %>
+  </div>
 
 <%= yield %>
 
