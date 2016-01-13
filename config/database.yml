@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: zombie_survival_store_production
-  username: zombie_survival_store
-  password: <%= ENV['ZOMBIE_SURVIVAL_STORE_DATABASE_PASSWORD'] %>
