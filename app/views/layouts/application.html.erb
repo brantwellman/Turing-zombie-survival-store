@@ -13,7 +13,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class = "background-image">
 
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content black">
@@ -35,7 +35,7 @@
             <li><%= link_to "Login", login_path %></li>
             <li><%= link_to "Create Account", new_user_path %></li>
           <% end %>
-        
+
         <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
