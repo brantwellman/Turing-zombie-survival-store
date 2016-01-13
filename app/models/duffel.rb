@@ -32,17 +32,6 @@ class Duffel
     end
   end
 
-  def item_details
-    contents.map do |item_id, quantity|
-      item = Item.find(item_id)
-      { title: item.title,
-        price: item.price,
-        quantity: quantity,
-        subtotal: (item.price * quantity)
-      }
-    end
-  end
-
   def item_subtotal(item_id)
     item = Item.find(item_id)
     contents[item_id.to_s] * item.price

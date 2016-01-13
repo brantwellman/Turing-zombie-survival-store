@@ -37,7 +37,7 @@
 
         <td class="center">$<%= item.price %></td>
 
-        <td class="center">$<%= (@duffel.count_of(item.id) * item.price) %></td>
+        <td class="center">$<%= @duffel.item_subtotal(item.id) %></td>
         <!--REMOVE THIS ITEM_SUBTOTAL LOGIC - EXTRACT TO DUFFEL MODEL-->
       </tr>
     <% end %>
