@@ -1,6 +1,8 @@
-<h1><%= current_user.first_name.capitalize %>'s<br>Dashboard</h1>
+<div class="dashboard-header">
+  <h1 class="center"><%= current_user.first_name.capitalize %>'s<br>Dashboard</h1>
+</div>
 
-<div class="user-card">
+<div class="container user-card center">
 
   <ul class="user-info">
     <li class="user-name"> <%= current_user.first_name %> <%= current_user.last_name %></li><br>

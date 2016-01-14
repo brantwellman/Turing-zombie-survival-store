@@ -28,6 +28,10 @@ FactoryGirl.define do
     email
     password "password"
     password_confirmation "password"
+
+    factory :user_with_orders do
+      orders { create_list(:order, 2) }
+    end
   end
 
   sequence :first_name do |n|
@@ -48,5 +52,8 @@ FactoryGirl.define do
     factory :category_with_items do
       items { create_list(:item, 2) }
     end
+  end
+
+  factory :order do
   end
 end

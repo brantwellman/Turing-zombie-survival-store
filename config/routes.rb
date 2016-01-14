@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "home#welcome"
   resources :users, only: [:new, :create]
+  resources :orders, only: [:index]
+
   resources :items, only: [:index]
   resources :categories, only: [:show], param: :title
   resources :duffel_items, only: [:create, :update]
