@@ -36,4 +36,18 @@ class Duffel
     item = Item.find(item_id)
     contents[item_id.to_s] * item.price
   end
+
+  def update_quantity(function, item_id)
+    case function
+    when "add"
+      contents[item_id] += 1
+    when "subtract"
+      contents[item_id] -= 1
+      if contents[item_id] <= 0
+        self.contents = contents.except(item_id)
+      end
+    when "remove"
+      self.contents = contents.except(item_id)
+    end
+  end
 end
