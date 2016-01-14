@@ -186,12 +186,19 @@ a.brand-logo {
 }
 
 #new-user-form {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .form-text {
   color: black;
   font-size: 1.2em;
+}
+
+#required-field {
+  font-family: "Special Elite";
+  font-weight: bold;
+  width: 50%;
+  font-size: .9em
 }
 
 /*Flash Notices*/
@@ -200,6 +207,13 @@ a.brand-logo {
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.6em;
+
+  background: #FFF6BF;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	text-align: center;
+	margin: 10px auto;
+	padding: 5px 20px;
 }
 
 /*User Dashboard*/
