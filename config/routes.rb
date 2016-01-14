@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index]
 
   resources :items, only: [:index]
-  resources :duffel_items, only: [:create]
   resources :categories, only: [:show], param: :title
+  resources :duffel_items, only: [:create, :update]
 
   get "/dashboard", to: "users#show"
   get "/duffel", to: "duffel_items#index"

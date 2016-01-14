@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ //= require material_icons
  */
 
 /* Headers */
@@ -144,6 +145,19 @@ a.brand-logo {
   padding: 0px 10px;
   position: relative;
   top: 3px;
+  color: black;
+}
+
+.remove-button {
+  position: relative;
+  top: 3px;
+  color: black;
+}
+
+.item-count {
+  margin: 0px 5px;
+  position: relative;
+  left: 9px;
 }
 
 #subtotal {
