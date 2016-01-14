@@ -180,23 +180,19 @@ a.brand-logo {
 /*User Dashboard*/
 
 .user-card {
+  padding-top: 15px;
   width: 400px;
   height: 500px;
-  display: inline-block;
-  margin: 10px;
+  margin: 10px auto;
   background-color: rgba(219, 211, 202, .6);
-
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  margin: auto;
-
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.4em;
+}
+
+.dashboard-header {
+  margin-bottom: 50px;
+
 }
 
 .user-name {
