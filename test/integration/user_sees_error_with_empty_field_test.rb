@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserSeesErrorWithEmptyOrIncorrectFieldTest < ActionDispatch::IntegrationTest
+class UserSeesErrorWithIncorrectFieldTest < ActionDispatch::IntegrationTest
   test "user does not provide email" do
     visit new_user_path
 
