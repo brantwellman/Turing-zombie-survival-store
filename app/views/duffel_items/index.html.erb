@@ -10,6 +10,7 @@
         <th class="center" data-field="quantity">Quantity</th>
         <th class="center" data-field="price">Price</th>
         <th class="center" data-field="total">Total</th>
+        <th class="right" data-field="remove"></th>
     </tr>
   </thead>
 
@@ -30,19 +31,23 @@
         </td>
 
         <td id="cart-item-quantity" class="center">
-          <%= link_to duffel_item_path(item.id), method: :put do %>
-            <i class="tiny material-icons quantity-button">remove_circle_outline</i>
+          <%= link_to duffel_item_path(item.id, function: "subtract"), method: :patch do %>
+            <i class="minus-icon material-icons md-18 quantity-button">remove_circle_outline</i>
           <% end %>
-          <%= @duffel.count_of(item.id) %>
-          <%= link_to duffel_item_path(item.id), method: :patch do %>
-            <i class="tiny material-icons quantity-button">add_circle_outline</i>
+            <span class="item-count"><%= @duffel.count_of(item.id) %></span>
+          <%= link_to duffel_item_path(item.id, function: "add"), method: :patch do %>
+            <i class="md-18 material-icons quantity-button">add_circle_outline</i>
           <% end %>
         </td>
 
         <td class="center">$<%= item.price %></td>
 
         <td id="item-subtotal" class="center">$<%= @duffel.item_subtotal(item.id) %></td>
-        <!--REMOVE THIS ITEM_SUBTOTAL LOGIC - EXTRACT TO DUFFEL MODEL-->
+        <td>
+          <%= link_to duffel_item_path(item.id, function: "remove"), method: :patch do %>
+            <i class="material-icons md-18 remove-button">clear</i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     <tr class="duffel-table">
@@ -55,6 +60,7 @@
       <td id="cart-subtotal" class="center">
         $<%= @duffel.subtotal %>
       </td>
+      <td></td>
     </tr>
   </tbody>
 </table>
