@@ -1,0 +1,34 @@
+<div class="container center">
+  <h1>Here are your Orders</h1>
+</div>
+
+<div class = "row">
+  <table class="bordered highlight col s6 offset-s3">
+    <thead>
+      <tr class="duffel-table table-headers">
+          <th class="center" data-field="date">Date</th>
+          <th class="center" data-field="total">Total</th>
+          <th data-field="button"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr class="duffel-table">
+
+          <td class="center">
+            <%= order.formatted_date %>
+          </td>
+
+          <td class="center">
+          
+          </td>
+          <td class="center">
+            <%= link_to "View Order", "#", class: "btn black" %>
+          </td>
+          <!--REMOVE THIS ITEM_SUBTOTAL LOGIC - EXTRACT TO DUFFEL MODEL-->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
