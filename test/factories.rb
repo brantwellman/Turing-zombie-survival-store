@@ -18,6 +18,30 @@ FactoryGirl.define do
     n.to_i
   end
 
+  factory :user do
+    first_name
+    last_name
+    address "123 Zombie Ln"
+    city "Denver"
+    state "CO"
+    zipcode "80121"
+    email
+    password "password"
+    password_confirmation "password"
+  end
+
+  sequence :first_name do |n|
+    "First name #{n}"
+  end
+
+  sequence :last_name do |n|
+    "Last name #{n}"
+  end
+
+  sequence :email do |n|
+    "email#{n}@zombiez.com"
+  end
+
   factory :category do
     title
 

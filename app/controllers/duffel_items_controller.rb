@@ -12,7 +12,6 @@ class DuffelItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     function = params[:function]
     if function == "add"
       session[:duffel][params[:id]] += 1
@@ -23,6 +22,6 @@ class DuffelItemsController < ApplicationController
         @duffel.contents = session[:duffel]
       end
     end
-    redirect_to '/duffel'
+    redirect_to "/duffel"
   end
 end

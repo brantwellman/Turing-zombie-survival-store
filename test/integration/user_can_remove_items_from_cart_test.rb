@@ -1,7 +1,6 @@
-require 'test_helper'
+require "test_helper"
 
 class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
-
   test "user removes item from cart by subtracting until quantity is 0" do
     item = create(:item)
 
@@ -9,10 +8,10 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     click_link "Add to Duffel"
     visit duffel_path
 
-    within '.cart-item-info' do
+    within ".cart-item-info" do
       assert page.has_content? "#{item.title}"
     end
-    within '#cart-item-quantity' do
+    within "#cart-item-quantity" do
       assert page.has_content? "1"
     end
 
@@ -29,10 +28,10 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     click_link "Add to Duffel"
     visit duffel_path
 
-    within '.cart-item-info' do
+    within ".cart-item-info" do
       assert page.has_content? "#{item.title}"
     end
-    within '#cart-item-quantity' do
+    within "#cart-item-quantity" do
       assert page.has_content? "1"
     end
 
@@ -41,5 +40,4 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     refute page.has_content? "#{item.title}"
     refute page.has_content? "1"
   end
-
 end

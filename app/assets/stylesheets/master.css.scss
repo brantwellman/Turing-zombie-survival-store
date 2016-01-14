@@ -1,0 +1,25 @@
+.hero-image {
+  background: url('/assets/background-img.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.enter {
+  font-family: "Special Elite";
+  font-size: 45px;
+  color: #C9D1D4;
+  width: 700px;
+  height: 100px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -230px;
+}
+
+a.enter:hover {
+  color: #424647;
+}
