@@ -1,5 +1,5 @@
 .background-image {
-  background: url('cracked_paper.jpg') no-repeat center center fixed;
+  background: url("cracked_paper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,7 +8,7 @@
 }
 
 .hero-image {
-  background: url('/assets/background-img.jpeg') no-repeat center center fixed;
+  background: url("/assets/background-img.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,8 +19,7 @@
 .enter {
   font-family: "Special Elite";
   font-size: 45px;
-  // color: #C9D1D4;
-  color: black;
+  color: #C9D1D4;
   width: 700px;
   height: 100px;
   padding: 20px;

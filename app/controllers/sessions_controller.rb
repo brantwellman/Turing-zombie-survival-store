@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Logged in as #{@user.first_name}"
       redirect_to dashboard_path
     else
-      flash.now[:error] = @user.errors.full_messages.join(", ")
+      flash.now[:error] = "Your email or password is incorrect"
       render :new
     end
   end

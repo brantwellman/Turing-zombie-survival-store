@@ -7,7 +7,7 @@ class AuthenticatedUserViewsPastOrdersTest < ActionDispatch::IntegrationTest
 
     visit "/orders"
 
-    assert page.has_content? user.orders.first.created_at
-    assert page.has_content? user.orders.last.created_at
+    assert page.has_content? user.orders.first.created_at.strftime("%B %e, %Y")
+    assert page.has_content? user.orders.last.created_at.strftime("%B %e, %Y")
   end
 end

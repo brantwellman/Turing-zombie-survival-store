@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :item do
     title
     description
