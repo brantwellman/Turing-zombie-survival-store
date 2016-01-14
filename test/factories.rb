@@ -32,6 +32,10 @@ FactoryGirl.define do
     factory :user_with_orders do
       orders { create_list(:order, 2) }
     end
+
+    factory :user_with_order do
+      orders { create_list(:order, 1) }
+    end
   end
 
   sequence :first_name do |n|
@@ -55,5 +59,9 @@ FactoryGirl.define do
   end
 
   factory :order do
+  end
+
+  factory :order_with_items do
+    items { create_list(:item, 2) }
   end
 end

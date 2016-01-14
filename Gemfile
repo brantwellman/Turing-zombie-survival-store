@@ -10,7 +10,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'rails_12factor'
 gem 'material_icons'
 
 # Use Unicorn as the app server
@@ -18,6 +17,10 @@ gem 'material_icons'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'
