@@ -3,7 +3,7 @@ class DuffelItemsController < ApplicationController
     item = Item.find(params[:item_id])
     @duffel.add_item(item.id)
     session[:duffel] = @duffel.contents
-    flash[:notice] = "We stuffed #{item.title} in your Go-Bag"
+    flash[:notice] = "We stuffed the #{item.title} in your Go-Bag"
     redirect_to items_path
   end
 
@@ -13,15 +13,8 @@ class DuffelItemsController < ApplicationController
 
   def update
     function = params[:function]
-    if function == "add"
-      session[:duffel][params[:id]] += 1
-    else
-      session[:duffel][params[:id]] -= 1
-      if session[:duffel][params[:id]] == 0
-        session[:duffel] = session[:duffel].except(params[:id])
-        @duffel.contents = session[:duffel]
-      end
-    end
+    @duffel.update_quantity(params[:function], params[:id])
+    session[:duffel] = @duffel.contents
     redirect_to "/duffel"
   end
 end

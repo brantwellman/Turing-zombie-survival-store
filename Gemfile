@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'material_icons'
+gem 'route_downcaser', '~> 1.2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -29,6 +30,10 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development do

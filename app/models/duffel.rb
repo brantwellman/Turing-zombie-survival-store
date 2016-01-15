@@ -18,14 +18,6 @@ class Duffel
     contents[item_id.to_s]
   end
 
-  def subtotal
-    item_prices = contents.map do |item_id, quantity|
-      item = Item.find(item_id)
-      item.price * quantity
-    end
-    item_prices.sum
-  end
-
   def duffel_items
     contents.map do |item_id, _quantity|
       Item.find(item_id)
@@ -35,5 +27,29 @@ class Duffel
   def item_subtotal(item_id)
     item = Item.find(item_id)
     contents[item_id.to_s] * item.price
+  end
+
+  def item_totals
+    duffel_items.map do |item|
+      item_subtotal(item.id)
+    end
+  end
+
+  def cart_subtotal
+    item_totals.sum
+  end
+
+  def update_quantity(function, item_id)
+    case function
+    when "add"
+      contents[item_id] += 1
+    when "subtract"
+      contents[item_id] -= 1
+      if contents[item_id] <= 0
+        self.contents = contents.except(item_id)
+      end
+    when "remove"
+      self.contents = contents.except(item_id)
+    end
   end
 end
