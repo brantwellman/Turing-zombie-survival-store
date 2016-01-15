@@ -17,11 +17,13 @@ class UserCanCheckoutOrder < ActionDispatch::IntegrationTest
     visit duffel_path
     click_on "Checkout"
 
+    order = user.orders.last
+
     assert_equal orders_path, current_path
-    assert page.has_content? "Order was successfully placed"
-    assert page.has_content? "Some Date"
-    assert page.has_link "View Order"
+    assert page.has_content? "Order was successfully placed."
+    assert page.has_content? order.formatted_date
+    assert page.has_link? "View Order"
     assert page.has_content? order.total
-    assert_equal user.orders.last.status, "ordered"
+    assert_equal order.status, "ordered"
   end
 end

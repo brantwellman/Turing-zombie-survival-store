@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
   end
 
   def show_updated_status
-    self.updated_at if status == "completed" || status == "cancelled"
+    updated_at if status == "completed" || status == "cancelled"
   end
 
   def formatted_date
@@ -19,11 +19,11 @@ class Order < ActiveRecord::Base
   end
 
   def item_quantities
-    self.items.group(:title).count
+    items.group(:title).count
   end
 
   def item_subtotals
-    self.items.group(:title).sum(:price)
+    items.group(:title).sum(:price)
   end
 
   def total
