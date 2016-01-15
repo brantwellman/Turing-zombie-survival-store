@@ -40,7 +40,7 @@ class DuffelTest < ActiveSupport::TestCase
     duffel = Duffel.new({ "#{item1.id}" => 1, "#{item2.id}" => 2 })
     sum = item1.price + (item2.price * 2)
 
-    assert_equal sum, duffel.subtotal
+    assert_equal sum, duffel.cart_subtotal
   end
 
   test "returns subtotal for the item" do
