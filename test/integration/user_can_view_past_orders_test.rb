@@ -4,7 +4,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "all order details are displayed" do
     user = create(:user_with_order)
     order = user.orders.first
-    order_date = user.orders.first.created_at.strftime("%B %e, %Y")
+    order_date = user.orders.first.formatted_date
     login_user(user)
 
     visit "/orders"
@@ -13,16 +13,21 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     click_on "View Order"
     assert_equal order_path(order), current_path
 
-    assert page.has_content? order.item.first.title
-    assert page.has_content? order.item.first.quantity
-    assert page.has_content? order.item.first.item_subtotal
+    assert page.has_content? order.items.first.title
 
-    assert page.has_content? order.item.last.title
-    assert page.has_content? order.item.last.quantity
-    assert page.has_content? order.item.last.item_subtotal
+    order.item_quantities.each do |_item_id, item_quantity|
+      assert page.has_content? item_quantity
+    end
 
-    assert page.has_link? item_1.title
-    assert page.has_link? item_2.title
+    order.item_subtotals.each do |_title, item_price|
+      assert page.has_content? item_price
+    end
+
+    assert page.has_content? order.items.last.title
+    assert page.has_content? order.item_subtotals
+
+    assert page.has_link? item.first.title
+    assert page.has_link? item.last.title
 
     assert page.has_content? "Status: paid"
     assert page.has_content? "$500"
@@ -32,7 +37,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "retired items in a past order still link to item page" do
     skip
     user = create(:user_order_with_retired_item)
-    user.orders.created_at.strftime("%B %e, %Y")
+    user.orders.formatted_date
     login_user(user)
 
     visit "/orders"

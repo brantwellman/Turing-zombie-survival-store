@@ -1,0 +1,12 @@
+<h1>Order Details for <%= @order.formatted_date %>: </h1>
+
+<% @order.items.each do |item| %>
+<ul>
+  <li>
+  <%= item.title %>
+  </li>
+</ul>
+<% end %>
+
+<%= @order.item_quantities %>
+<%= @order.item_subtotals %>

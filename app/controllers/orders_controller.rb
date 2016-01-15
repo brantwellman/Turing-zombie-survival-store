@@ -6,5 +6,6 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @item_quantities = @order.item_quantities
   end
 end

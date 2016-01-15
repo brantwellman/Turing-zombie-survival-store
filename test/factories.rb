@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :item do
     title
     description
-    price
+    price 10
     image "https://www.wpclipart.com/weapons/axe/Axe_red.svg"
   end
 
@@ -13,11 +13,7 @@ FactoryGirl.define do
   sequence :description do |n|
     "Description#{n}"
   end
-
-  sequence :price do |n|
-    n.to_i
-  end
-
+  
   factory :user do
     first_name
     last_name
@@ -59,9 +55,6 @@ FactoryGirl.define do
   end
 
   factory :order do
-  end
-
-  factory :order_with_items do
     items { create_list(:item, 2) }
   end
 end
