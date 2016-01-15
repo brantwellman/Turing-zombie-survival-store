@@ -19,6 +19,10 @@ gem 'route_downcaser', '~> 1.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'
