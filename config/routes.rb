@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "home#welcome"
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :create, :show]
 
   resources :items, only: [:index, :show]
   resources :categories, only: [:show], param: :title
