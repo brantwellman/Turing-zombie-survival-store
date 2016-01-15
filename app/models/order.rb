@@ -26,6 +26,13 @@ class Order < ActiveRecord::Base
     self.items.group(:title).sum(:price)
   end
 
+  def item_subtotal(item_id)
+    item = Item.find(item_id)
+    order_item = self.order_items.find_by(item_id: item_id)
+    binding.pry
+    item.price * order_item.quantity
+  end
+
   def total
     item_subtotals.values.sum
   end

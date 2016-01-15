@@ -1,5 +1,5 @@
 <div class="container center">
-  <h1>Here are your Orders</h1>
+  <h1>Past Orders</h1>
 </div>
 
 <div class = "row">
@@ -16,14 +16,15 @@
       <% @orders.each do |order| %>
         <tr class="duffel-table">
 
-          <td class="center">
+          <td class="order-date center">
             <%= order.formatted_date %>
           </td>
 
-          <td class="center">
+          <td class="order-price center">
 
           </td>
-          <td class="center">
+
+          <td class="button center">
             <%= link_to "View Order", order_path(order), class: "btn black" %>
           </td>
           <!--REMOVE THIS ITEM_SUBTOTAL LOGIC - EXTRACT TO DUFFEL MODEL-->
