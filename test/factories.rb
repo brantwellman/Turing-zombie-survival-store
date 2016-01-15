@@ -3,6 +3,7 @@ FactoryGirl.define do
     title
     description
     price 10
+    status nil
     image "https://www.wpclipart.com/weapons/axe/Axe_red.svg"
   end
 
@@ -13,7 +14,7 @@ FactoryGirl.define do
   sequence :description do |n|
     "Description#{n}"
   end
-  
+
   factory :user do
     first_name
     last_name
