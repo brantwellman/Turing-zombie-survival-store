@@ -1,38 +1,38 @@
-<h1>Be prepared.</h1>
-<h1>Create an account:</h1>
+<h3 class="center">Be prepared.</h3>
+<h1 class="center">Create an account:</h1>
 
 <p id="required-field" id=""class="container">
   <%= "*Required field" %>
 </p>
 <div id="new-user-form" class="container">
   <%= form_for @user do |f| %>
-    <%="*"%><%= f.label :first_name, class: "form-text" %>
+    *<%= f.label :first_name, class: "form-text" %>
     <%= f.text_field :first_name %>
-    <br><br>
-    <%="*"%><%= f.label :last_name, class: "form-text" %>
+
+    *<%= f.label :last_name, class: "form-text" %>
     <%= f.text_field :last_name %>
-    <br><br>
+
     <%= f.label :address, class: "form-text" %>
     <%= f.text_field :address %>
-    <br><br>
+
     <%= f.label :city, class: "form-text" %>
     <%= f.text_field :city %>
-    <br><br>
+
     <%= f.label :state, class: "form-text" %>
     <%= f.text_field :state %>
-    <br><br>
+
     <%= f.label :zipcode, class: "form-text" %>
     <%= f.text_field :zipcode %>
-    <br><br>
-    <%="*"%><%= f.label :email, class: "form-text" %>
+
+    *<%= f.label :email, class: "form-text" %>
     <%= f.text_field :email %>
-    <br><br>
-    <%="*"%><%= f.label :password, class: "form-text" %>
+
+    *<%= f.label :password, class: "form-text" %>
     <%= f.password_field :password %>
-    <br><br>
-    <%="*"%><%= f.label :password_confirmation, class: "form-text" %>
+
+    *<%= f.label :password_confirmation, class: "form-text" %>
     <%= f.password_field :password_confirmation %>
-    <br><br>
-    <%= f.submit "Submit" %>
+
+    <%= f.submit "Submit", class:"submit-btn" %>
   <% end %>
 </div>

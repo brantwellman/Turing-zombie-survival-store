@@ -24,7 +24,7 @@
           </div>
           <div class="card-content">
             <span class="item-title activator grey-text text-darken-4"><%= item.title %></span>
-            <span class="right activator grey-text text-darken-4 card-price"><%= item.price %></span>
+            <span class="right activator grey-text text-darken-4 card-price"><%= number_to_currency(item.price) %></span>
             <div class="add-to-duffel center-align">
               <%= link_to "Add to Duffel", duffel_items_path(item_id: item.id), method: :post, class: "black center-align waves-effect waves-light btn site-font" %>
             </div>

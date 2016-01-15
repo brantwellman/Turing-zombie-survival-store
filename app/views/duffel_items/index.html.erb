@@ -40,9 +40,9 @@
           <% end %>
         </td>
 
-        <td class="center">$<%= item.price %></td>
+        <td class="center"><%= number_to_currency(item.price) %></td>
 
-        <td id="item-subtotal" class="center">$<%= @duffel.item_subtotal(item.id) %></td>
+        <td id="item-subtotal" class="center"><%= number_to_currency(@duffel.item_subtotal(item.id)) %></td>
         <td>
           <%= link_to duffel_item_path(item.id, function: "remove"), method: :patch do %>
             <i class="material-icons md-18 remove-button">clear</i>
@@ -58,7 +58,7 @@
         <strong>Subtotal:</strong>
       </td>
       <td id="cart-subtotal" class="center">
-        $<%= @duffel.subtotal %>
+        <%= number_to_currency(@duffel.cart_subtotal) %>
       </td>
       <td></td>
     </tr>

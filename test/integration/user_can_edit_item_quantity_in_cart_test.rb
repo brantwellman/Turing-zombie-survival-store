@@ -9,7 +9,7 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     visit duffel_path
 
     within ".cart-item-info" do
-      assert page.has_content? "#{item.title}"
+      assert page.has_content? item.title
     end
     within "#cart-item-quantity" do
       assert page.has_content? "1"
@@ -22,23 +22,23 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
       assert page.has_content? "2"
     end
     within "#item-subtotal" do
-      assert page.has_content? "#{(item.price.to_i * 2)}"
+      assert page.has_content? number_to_currency(item.price.to_i * 2)
     end
     within "#cart-subtotal" do
-      assert page.has_content? "#{(item.price.to_i * 2)}"
+      assert page.has_content? number_to_currency(item.price.to_i * 2)
     end
 
     click_link_or_button "remove_circle_outline"
 
     assert_equal duffel_path, current_path
     within ".cart-item-info" do
-      assert page.has_content? "#{item.title}"
+      assert page.has_content? item.title
     end
     within "#cart-item-quantity" do
       assert page.has_content? "1"
     end
     within "#cart-subtotal" do
-      assert page.has_content? "#{item.price}"
+      assert page.has_content? number_to_currency(item.price)
     end
   end
 end

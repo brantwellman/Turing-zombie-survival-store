@@ -25,6 +25,10 @@ h3 {
   font-family: "Special Elite";
 }
 
+.warning-header {
+  float: left;
+}
+
 /* Nav Bar */
 
 .nav-wrapper {
@@ -176,6 +180,12 @@ a.brand-logo {
 
 #new-user-form {
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  padding: 10px;
+  margin: 5px;
 }
 
 .form-text {
@@ -189,6 +199,7 @@ a.brand-logo {
   width: 50%;
   font-size: .9em
 }
+
 
 /*Flash Notices*/
 
