@@ -13,15 +13,8 @@ class DuffelItemsController < ApplicationController
 
   def update
     function = params[:function]
-    if function == "add"
-      session[:duffel][params[:id]] += 1
-    else
-      session[:duffel][params[:id]] -= 1
-      if session[:duffel][params[:id]] == 0
-        session[:duffel] = session[:duffel].except(params[:id])
-        @duffel.contents = session[:duffel]
-      end
-    end
+    @duffel.update_quantity(params[:function], params[:id])
+    session[:duffel] = @duffel.contents
     redirect_to "/duffel"
   end
 end

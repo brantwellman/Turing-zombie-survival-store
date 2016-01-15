@@ -38,4 +38,18 @@ class Duffel
   def cart_subtotal
     item_totals.sum
   end
+
+  def update_quantity(function, item_id)
+    case function
+    when "add"
+      contents[item_id] += 1
+    when "subtract"
+      contents[item_id] -= 1
+      if contents[item_id] <= 0
+        self.contents = contents.except(item_id)
+      end
+    when "remove"
+      self.contents = contents.except(item_id)
+    end
+  end
 end
