@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root "home#welcome"
+
+  namespace :admin do
+    get "/dashboard", to: "users#index"
+  end
+
   resources :users, only: [:new, :create]
   resources :orders, only: [:index, :create, :show]
 
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
   resources :duffel_items, only: [:create, :update]
 
   get "/dashboard", to: "users#show"
+
   get "/duffel", to: "duffel_items#index"
 
   get "/login", to: "sessions#new"

@@ -5,7 +5,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     user = create(:user)
     item_1 = Item.create(title: "Hammer", price: 10)
     item_2 = Item.create(title: "Ax", price: 500)
-    login_user(user)
+    login(user)
 
     visit item_path(item_1)
     click_on "Add to Duffel"
@@ -53,7 +53,7 @@ class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
     item.update_attribute(:status, "retired")
     order.update_attribute(:status, "completed")
 
-    login_user(user)
+    login(user)
 
     visit order_path(order)
 

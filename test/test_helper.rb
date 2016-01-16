@@ -18,9 +18,20 @@ class ActionDispatch::IntegrationTest
   end
 end
 
-def login_user(user)
+def login(user)
   visit login_path
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
   click_button "Login"
+end
+
+def create_admin
+  User.create(
+    first_name:"Admin",
+    last_name:"Admin",
+    email:"admin@email.com",
+    password:"password",
+    password_confirmation:"password",
+    role:1
+  )
 end
