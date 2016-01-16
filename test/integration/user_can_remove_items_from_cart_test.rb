@@ -11,7 +11,7 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     within ".cart-item-info" do
       assert page.has_content? "#{item.title}"
     end
-    within "#cart-item-quantity" do
+    within ".order-item-quantity" do
       assert page.has_content? "1"
     end
 
@@ -31,7 +31,7 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     within ".cart-item-info" do
       assert page.has_content? "#{item.title}"
     end
-    within "#cart-item-quantity" do
+    within ".order-item-quantity" do
       assert page.has_content? "1"
     end
 

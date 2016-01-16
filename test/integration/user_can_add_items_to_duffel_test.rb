@@ -18,7 +18,7 @@ class UserCanAddItemsToDuffel < ActionDispatch::IntegrationTest
     assert page.has_content? item.description
     assert page.has_content? number_to_currency(item.price)
     assert page.has_css?("img[src='#{item.image}']")
-    within "#cart-subtotal" do
+    within ".order-subtotal" do
       assert page.has_content? number_to_currency(item.price.to_i * 2)
     end
   end

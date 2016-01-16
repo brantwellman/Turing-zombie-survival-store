@@ -35,20 +35,16 @@
         <td class="item-subtotal center"><%= number_to_currency(@order.item_subtotal(item.id)) %></td>
       </tr>
     <% end %>
-    <tr class="order-item-table">
+    <tr class="order-item-table order-subtotal">
       <td id="status-label" class="right">Status:</td>
       <td><%= @order.status %></td>
       <td><%= @order.show_updated_status %></td>
-      <td class="order-subtotal table-headers right-align">
+      <td class="table-headers right-align">
         <strong>Subtotal:</strong>
       </td>
-      <td class="order-subtotal center">
+      <td class="center">
         <%= number_to_currency(@order.total) %>
       </td>
     </tr>
   </tbody>
 </table>
-
-<div class="status">
-
-</div>

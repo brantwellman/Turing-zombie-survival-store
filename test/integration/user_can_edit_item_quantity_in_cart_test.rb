@@ -11,20 +11,20 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     within ".cart-item-info" do
       assert page.has_content? item.title
     end
-    within "#cart-item-quantity" do
+    within ".order-item-quantity" do
       assert page.has_content? "1"
     end
 
     click_link_or_button "add_circle_outline"
 
     assert_equal duffel_path, current_path
-    within "#cart-item-quantity" do
+    within ".order-item-quantity" do
       assert page.has_content? "2"
     end
-    within "#item-subtotal" do
+    within ".item-subtotal" do
       assert page.has_content? number_to_currency(item.price.to_i * 2)
     end
-    within "#cart-subtotal" do
+    within ".order-subtotal" do
       assert page.has_content? number_to_currency(item.price.to_i * 2)
     end
 
@@ -34,10 +34,10 @@ class UserCanEditItemQuantityInCart < ActionDispatch::IntegrationTest
     within ".cart-item-info" do
       assert page.has_content? item.title
     end
-    within "#cart-item-quantity" do
+    within ".order-item-quantity" do
       assert page.has_content? "1"
     end
-    within "#cart-subtotal" do
+    within ".order-subtotal" do
       assert page.has_content? number_to_currency(item.price)
     end
   end
