@@ -24,4 +24,10 @@ class UnauthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
 
     assert_equal login_path, current_path
   end
+
+  test "unauth user do not have access to admin tasks" do
+    visit admin_dashboard_path
+    assert page.has_content? "404"
+    refute page.has_content? "Create New Item"
+  end
 end
