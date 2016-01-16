@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class AdminCanViewDashboardTest < ActionDispatch::IntegrationTest
   test "admin can view admin dashboard" do

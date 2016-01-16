@@ -27,11 +27,11 @@ end
 
 def create_admin
   User.create(
-    first_name:"Admin",
-    last_name:"Admin",
-    email:"admin@email.com",
-    password:"password",
-    password_confirmation:"password",
-    role:1
+    first_name: "Admin",
+    last_name: "Admin",
+    email: "admin@email.com",
+    password: "password",
+    password_confirmation: "password",
+    role: 1
   )
 end
