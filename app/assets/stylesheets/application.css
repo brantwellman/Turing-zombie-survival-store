@@ -118,7 +118,7 @@ a.brand-logo {
 
 /* Duffel & Individual Past Order */
 
-.cart-image, .order-image img {
+.cart-image img, .order-image img {
   height: 100px;
   width: 100px;
 }
@@ -246,6 +246,12 @@ a.brand-logo {
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.4em;
+  color: black;
+}
+
+#status-label {
+  position: relative;
+  bottom: -4px;
 }
 
 /*All Past Orders*/

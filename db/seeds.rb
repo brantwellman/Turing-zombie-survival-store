@@ -6,6 +6,7 @@ class Seed
   def generate
     create_categories
     create_items
+    create_users
   end
 
   def create_categories
@@ -13,6 +14,20 @@ class Seed
     titles.each do |title|
       Category.create(title: title)
     end
+  end
+
+  def create_users
+    User.create!([
+      {
+        first_name: "Brant",
+        last_name: "Wellman",
+        address: "1510 Blake St",
+        city: "Denver",
+        zipcode: "80202",
+        email: "brant@email.com",
+        password: "password"
+      }
+    ])
   end
 
   def create_items

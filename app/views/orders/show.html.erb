@@ -2,7 +2,7 @@
   <h1>Order Details for <%= @order.formatted_date %>: </h1>
 </div>
 
-<table class="container bordered highlight">
+<table class="container bordered highlight site-font">
   <thead>
     <tr class="order-item-table table-headers">
         <th class="item-header" data-field="image">Item</th>
@@ -22,24 +22,23 @@
           </div>
         </td>
         <td>
-          <div class="order-item-title">
-            <p><%= item.title.capitalize %></p>
+          <div>
+            <%= link_to item.title.capitalize, item, class: "order-item-title" %>
           </div>
         </td>
         <td class="order-item-quantity center">
-          <% item_quantity = @order.order_items.find_by(item_id: item.id).quantity %>
-          <%= item_quantity %>
+          <%= @order.item_quantity(item.id) %>
         </td>
 
         <td class="item-price center"><%= number_to_currency(item.price) %></td>
 
-        <td class="item-subtotal center"><%= number_to_currency(item.price * item_quantity) %></td>
+        <td class="item-subtotal center"><%= number_to_currency(@order.item_subtotal(item.id)) %></td>
       </tr>
     <% end %>
     <tr class="order-item-table">
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="status-label" class="right">Status:</td>
+      <td><%= @order.status %></td>
+      <td><%= @order.show_updated_status %></td>
       <td class="order-subtotal table-headers right-align">
         <strong>Subtotal:</strong>
       </td>
@@ -51,6 +50,5 @@
 </table>
 
 <div class="status">
-  Status: <%= @order.status %>
-  <%= @order.show_updated_status %>
+
 </div>

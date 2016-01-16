@@ -11,7 +11,11 @@ class Order < ActiveRecord::Base
   end
 
   def show_updated_status
-    updated_at if status == "completed" || status == "cancelled"
+    updated_at.strftime("%B %e, %Y") if order_closed?
+  end
+
+  def order_closed?
+    status == "completed" || status == "canceled"
   end
 
   def formatted_date
@@ -22,18 +26,23 @@ class Order < ActiveRecord::Base
     items.group(:title).count
   end
 
+  def item_quantity(item_id)
+    order_items.find_by(item_id: item_id).quantity
+  end
+
   def item_subtotals
-    items.group(:title).sum(:price)
+    items.map do |item|
+      item_subtotal(item.id)
+    end
   end
 
   def item_subtotal(item_id)
     item = Item.find(item_id)
-    order_item = self.order_items.find_by(item_id: item_id)
-    binding.pry
+    order_item = order_items.find_by(item_id: item_id)
     item.price * order_item.quantity
   end
 
   def total
-    item_subtotals.values.sum
+    item_subtotals.sum
   end
 end
