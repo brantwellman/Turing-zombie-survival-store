@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   has_many :orders
+
+  enum role: %w(default admin)
 end

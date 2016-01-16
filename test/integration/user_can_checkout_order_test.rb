@@ -13,7 +13,7 @@ class UserCanCheckoutOrder < ActionDispatch::IntegrationTest
 
     assert_equal login_path, current_path
 
-    login_user(user)
+    login(user)
     visit duffel_path
     click_on "Checkout"
 
