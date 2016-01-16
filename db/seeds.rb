@@ -17,7 +17,7 @@ class Seed
   end
 
   def create_users
-    User.create!([
+    User.create([
       {
         first_name: "Brant",
         last_name: "Wellman",
@@ -25,7 +25,8 @@ class Seed
         city: "Denver",
         zipcode: "80202",
         email: "brant@email.com",
-        password: "password"
+        password: "password",
+        password_confirmation: "password"
       }
     ])
   end
@@ -37,28 +38,32 @@ class Seed
         price: 105,
         description: "Use it to chop your way through the crowds",
         image: "https://www.wpclipart.com/weapons/axe/Axe_red.svg",
-        category_id: 1
+        category_id: 1,
+        status: "active"
       },
       {
         title: "axe2",
         price: 125,
         description: "It's even better! Use it to chop your way through the crowds",
         image: "https://www.wpclipart.com/weapons/axe/Axe_red.svg",
-        category_id: 1
+        category_id: 1,
+        status: "active"
       },
       {
         title: "vest1",
         price: 135,
         description: "Not only does it look good, but you can hold lots of ammo in the pockets!",
         image: "https://www.wpclipart.com/weapons/axe/Axe_red.svg",
-        category_id: 2
+        category_id: 2,
+        status: "active"
       },
       {
         title: "vest2",
         price: 145,
         description: "This vest has even more pockets! You can carry up to 2 days worth of food if necessary!",
         image: "https://www.wpclipart.com/weapons/axe/Axe_red.svg",
-        category_id: 2
+        category_id: 2,
+        status: "active"
       }
       ])
   end
