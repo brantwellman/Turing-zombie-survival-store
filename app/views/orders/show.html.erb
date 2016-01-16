@@ -1,0 +1,54 @@
+<div class="container center">
+  <h1>Order Details for <%= @order.formatted_date %>: </h1>
+</div>
+
+<table class="container bordered highlight site-font">
+  <thead>
+    <tr class="order-item-table table-headers">
+        <th class="item-header" data-field="image">Item</th>
+        <th data-field="item"></th>
+        <th class="center" data-field="quantity">Quantity</th>
+        <th class="center" data-field="price">Price</th>
+        <th class="center" data-field="total">Total</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order.items.each do |item| %>
+      <tr class="order-item-table">
+        <td>
+          <div class="order-image center">
+            <%= link_to image_tag(item.image), item %>
+          </div>
+        </td>
+        <td>
+          <div>
+            <%= link_to item.title.capitalize, item, class: "order-item-title" %>
+          </div>
+        </td>
+        <td class="order-item-quantity center">
+          <%= @order.item_quantity(item.id) %>
+        </td>
+
+        <td class="item-price center"><%= number_to_currency(item.price) %></td>
+
+        <td class="item-subtotal center"><%= number_to_currency(@order.item_subtotal(item.id)) %></td>
+      </tr>
+    <% end %>
+    <tr class="order-item-table">
+      <td id="status-label" class="right">Status:</td>
+      <td><%= @order.status %></td>
+      <td><%= @order.show_updated_status %></td>
+      <td class="order-subtotal table-headers right-align">
+        <strong>Subtotal:</strong>
+      </td>
+      <td class="order-subtotal center">
+        <%= number_to_currency(@order.total) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="status">
+
+</div>

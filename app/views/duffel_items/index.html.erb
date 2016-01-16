@@ -2,7 +2,7 @@
   <h1>Your Duffel Bag</h1>
 </div>
 
-<table class="container bordered highlight">
+<table class="container bordered highlight site-font">
   <thead>
     <tr class="duffel-table table-headers">
         <th class="item-header" data-field="image">Item</th>
@@ -25,7 +25,7 @@
 
         <td>
           <div class="cart-item-info">
-            <p><strong><%= item.title %></strong></p>
+            <%= link_to item.title.capitalize, item, class: "order-item-title" %>
             <p><%= item.description %></p>
           </div>
         </td>
@@ -66,5 +66,5 @@
 </table>
 
 <div class="checkout">
-  <%= link_to "Checkout", duffel_path, class:"btn black" %>
+  <%= link_to "Checkout", orders_path, method: :post, class:"btn black" %>
 </div>
