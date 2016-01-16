@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :all_categories, :current_user, :current_admin?
+  helper_method :all_categories,
+                :current_user,
+                :current_admin?,
+                :unauthenticated_user_error
   before_action :set_duffel
 
   def all_categories
@@ -17,5 +20,9 @@ class ApplicationController < ActionController::Base
 
   def current_admin?
     current_user && current_user.admin?
+  end
+
+  def unauthenticated_user_error
+    render(file: "/public/404") unless current_user
   end
 end
