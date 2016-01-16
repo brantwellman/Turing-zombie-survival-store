@@ -22,15 +22,28 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
-      :first_name,
-      :last_name,
-      :email,
-      :address,
-      :city,
-      :state,
-      :zipcode,
-      :password,
-      :password_confirmation)
+    if @user.admin?
+      params.require(:user).permit(
+        :first_name,
+        :last_name,
+        :email,
+        :address,
+        :city,
+        :state,
+        :zipcode,
+        :password,
+        :password_confirmation,
+        :role)
+    else
+      params.require(:user).permit(
+        :first_name,
+        :last_name,
+        :email,
+        :address,
+        :city,
+        :state,
+        :zipcode,
+        :password,
+        :password_confirmation)
   end
 end
