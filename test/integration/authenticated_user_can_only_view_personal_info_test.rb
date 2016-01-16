@@ -22,11 +22,9 @@ class UserCanOnlyViewPersonalInfoTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "404"
     assert page.has_content? "The page you were looking for doesn't exist."
-
   end
 
-  test "authenticated user cannot make self an admin" do
-
-  end
-
+  # test "authenticated user cannot make self an admin" do
+  #   user = create(:user)
+  # end
 end
