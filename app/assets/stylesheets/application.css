@@ -127,7 +127,7 @@ a.brand-logo {
     background-color: rgba(219, 211, 202, .6);
 }
 
-.checkout, .edit-profile {
+.checkout {
   margin-left: 72%;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -168,16 +168,13 @@ a.brand-logo {
 
 /*Forms*/
 
-#login-form, #new-user-form {
+#login-form, #user-form {
   background-color: rgba(219, 211, 202, .6);
   font-family: "Special Elite";
   font-weight: bold;
   width: 50%;
-}
-
-#user-form {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .submit-btn {
@@ -234,6 +231,10 @@ a.brand-logo {
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.8em;
+}
+
+.edit-profile-button {
+  margin-top: 100px;
 }
 
 /*Individual Past Order*/

@@ -9,9 +9,9 @@
     <li class="user-address"><%= current_user.address %></li>
     <li class="user-city-state"><%= current_user.city %> <%= current_user.state %></li>
     <li class="user-zip"> <%= current_user.zipcode %></li><br>
-  </ul>
-</div>
 
-<div class="edit-profile">
-  <%= link_to "Edit Profile", edit_user_path(current_user), class:"btn black" %>
+    <div class="edit-profile-button">
+      <li><%= link_to "Edit Profile", edit_user_path(current_user), class:"btn black" %></li>
+    </div>
+  </ul>
 </div>

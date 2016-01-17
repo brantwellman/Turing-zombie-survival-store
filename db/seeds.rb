@@ -29,7 +29,7 @@ class Seed
         password_confirmation: "password",
       },
       { first_name: "Penney",
-        last_name: "Wellman",
+        last_name: "Gadget",
         address: "3213 E Colfax Ave",
         city: "Denver",
         zipcode: "80206",
@@ -111,7 +111,7 @@ class Seed
       {
         title: "Boots for Him",
         price: 300,
-        description: "TThere's no reason not to look babely whilst chopping off
+        description: "There's no reason not to look babely whilst chopping off
                       heads.",
         image: "https://s-media-cache-ak0.pinimg.com/736x/47/08/24/4708247d527f4ac00f141621c67125b7.jpg",
         category_id: 1
