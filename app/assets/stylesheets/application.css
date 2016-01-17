@@ -267,3 +267,9 @@ a.brand-logo {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* Map */
+
+html, body { height: 100%; margin: 0; padding: 0; }
+
+#map { height: 100%; }
