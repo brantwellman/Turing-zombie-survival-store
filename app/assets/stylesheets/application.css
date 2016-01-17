@@ -267,3 +267,23 @@ a.brand-logo {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* Game */
+
+#game-div
+{
+    width    : 700px;
+    height   : 600px;
+    overflow : hidden;
+    position : relative;
+    margin-bottom: 50px;
+}
+
+#game-iframe
+{
+    position : absolute;
+    top      : -170px;
+    left     : -290px;
+    width    : 1280px;
+    height   : 1200px;
+}
