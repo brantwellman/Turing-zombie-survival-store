@@ -312,7 +312,7 @@ class Seed
         title: "Original Mace",
         price: 600,
         description: "Pepper spray those zombies with spikes!!",
-        image: "http://www.weapons-universe.com/Medieval/Medieval-Maces/Medieval-Wooden-Double-Mace-Ball-PK-MB-2.jpg",
+        image: "http://i247.photobucket.com/albums/gg158/MDA2008/Mace.jpg",
         category_id: 3
       },
       {
