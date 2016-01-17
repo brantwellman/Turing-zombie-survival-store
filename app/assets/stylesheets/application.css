@@ -127,7 +127,7 @@ a.brand-logo {
     background-color: rgba(219, 211, 202, .6);
 }
 
-.checkout {
+.checkout, .edit-profile {
   margin-left: 72%;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -175,7 +175,7 @@ a.brand-logo {
   width: 50%;
 }
 
-#new-user-form {
+#user-form {
   margin-top: 20px;
   margin-bottom: 20px;
 }
