@@ -2,7 +2,7 @@
   <h1>Your Duffel Bag</h1>
 </div>
 
-<table class="container bordered highlight">
+<table class="container bordered highlight site-font">
   <thead>
     <tr class="duffel-table table-headers">
         <th class="item-header" data-field="image">Item</th>
@@ -16,21 +16,21 @@
 
   <tbody>
     <% @duffel.duffel_items.each do |item| %>
-      <tr class="duffel-table">
+      <tr class="order-item-table">
         <td>
-          <div class="cart-image center">
+          <div class="order-image center">
             <%= image_tag(item.image) %>
           </div>
         </td>
 
         <td>
           <div class="cart-item-info">
-            <p><strong><%= item.title %></strong></p>
+            <%= link_to item.title.capitalize, item, class: "order-item-title" %>
             <p><%= item.description %></p>
           </div>
         </td>
 
-        <td id="cart-item-quantity" class="center">
+        <td class="center order-item-quantity">
           <%= link_to duffel_item_path(item.id, function: "subtract"), method: :patch do %>
             <i class="minus-icon material-icons md-18 quantity-button">remove_circle_outline</i>
           <% end %>
@@ -40,9 +40,9 @@
           <% end %>
         </td>
 
-        <td class="center"><%= number_to_currency(item.price) %></td>
+        <td class="item-price center"><%= number_to_currency(item.price) %></td>
 
-        <td id="item-subtotal" class="center"><%= number_to_currency(@duffel.item_subtotal(item.id)) %></td>
+        <td class="center item-subtotal"><%= number_to_currency(@duffel.item_subtotal(item.id)) %></td>
         <td>
           <%= link_to duffel_item_path(item.id, function: "remove"), method: :patch do %>
             <i class="material-icons md-18 remove-button">clear</i>
@@ -50,14 +50,14 @@
         </td>
       </tr>
     <% end %>
-    <tr class="duffel-table">
+    <tr class="duffel-table order-subtotal">
       <td></td>
       <td></td>
       <td></td>
-      <td class="table-headers right-align">
+      <td class="right-align">
         <strong>Subtotal:</strong>
       </td>
-      <td id="cart-subtotal" class="center">
+      <td class="center">
         <%= number_to_currency(@duffel.cart_subtotal) %>
       </td>
       <td></td>

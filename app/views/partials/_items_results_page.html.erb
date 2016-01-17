@@ -16,7 +16,7 @@
     <h1 class="center-align index-h1">Everything you could possibly need to survive....</h1>
     <h3 class="center-align">Not a single thing missing, nope.</h3>
 
-    <div class="items-container">
+    <div class="items-container site-font">
       <% target.each do |item| %>
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
@@ -31,7 +31,6 @@
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= item.title %><i class="material-icons right">close</i></span>
-            <strong><%= item.title %></strong>
             <p><%= item.description %></p>
           </div>
         </div> <!-- end of card -->

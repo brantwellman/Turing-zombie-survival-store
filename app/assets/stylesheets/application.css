@@ -49,10 +49,7 @@ a.brand-logo {
   color: white;
 }
 
-
-/* Items Page (Items#Index, Categories#Show) */
-
-  /* Categories Side Bar */
+/* Categories Side Bar */
 
 .categories-side-bar {
   height: 600px;
@@ -119,9 +116,9 @@ a.brand-logo {
 }
 
 
-/* Duffel */
+/* Duffel & Individual Past Order */
 
-.cart-image img {
+.cart-image img, .order-image img {
   height: 100px;
   width: 100px;
 }
@@ -237,4 +234,36 @@ a.brand-logo {
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.8em;
+}
+
+/*Individual Past Order*/
+
+.order-item-table {
+    background-color: rgba(219, 211, 202, .6);
+}
+
+.order-item-title, .item-subtotal, .order-subtotal, .item-price, .order-item-quantity {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+  color: black;
+}
+
+#status-label {
+  position: relative;
+  bottom: -4px;
+}
+
+/*All Past Orders*/
+
+.order-date, .order-price {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.button {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.2em;
 }
