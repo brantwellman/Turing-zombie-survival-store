@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).ready(function() {
-    $('select').material_select();
+  $('select').material_select();
+  $(".button-collapse").sideNav({
+    edge: "right",
+  });
 });
