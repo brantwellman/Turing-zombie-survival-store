@@ -19,18 +19,46 @@
 // Setting up the map...
 // Object containing LatLng and danger level for each outbreak.
 var reported_outbreaks = {
-  boulder: {
-    center: {lat: 40.0274, lng: -105.2519},
+  1: {
+    center: {lat: 40.1074, lng: -105.2519},
     danger: 8
   },
-  golden: {
+  2: {
+    center: {lat: 40.0314, lng: -105.2535},
+    danger: 4
+  },
+  3: {
+    center: {lat: 40.0284, lng: -105.2173},
+    danger: 2
+  },
+  4: {
+    center: {lat: 40.0894, lng: -105.3586},
+    danger: 5
+  },
+  5: {
+    center: {lat: 40, lng: -105.3416},
+    danger: 5
+  },
+  6: {
     center: {lat: 39.7469, lng: -105.2108},
     danger: 4
   },
-  lakewood: {
-    center: {lat: 39.7047, lng: -105.0814},
+  7: {
+    center: {lat: 39.5047, lng: -105.0814},
     danger: 2
-  }
+  },
+  8: {
+    center: {lat: 39.7669, lng: -105.1108},
+    danger: 4
+  },
+  9: {
+    center: {lat: 39.869, lng: -104.7208},
+    danger: 7
+  },
+  10: {
+    center: {lat: 39.6969, lng: -104.8508},
+    danger: 3
+  },
 };
 
 var safehouses = {
@@ -56,7 +84,7 @@ function initMap() {
       fillOpacity: 0.35,
       map: map,
       center: reported_outbreaks[outbreak].center,
-      radius: (reported_outbreaks[outbreak].danger) * 1000
+      radius: (reported_outbreaks[outbreak].danger) * 800
     });
   }
 
@@ -71,38 +99,4 @@ function initMap() {
     icon: image,
     });
   };
-};
-
-// Haven't gotten heatmap to work yet.
-
-var heatmap = new google.maps.visualization.HeatmapLayer({
-  data: heatmapData
-});
-heatmap.setMap(map);
-
-var heatmapData = [
-  new google.maps.LatLng(40.0274, -105.2560),
-  new google.maps.LatLng(40.0275, -105.2558),
-  new google.maps.LatLng(40.0276, -105.2546),
-  new google.maps.LatLng(40.0277, -105.2539),
-  new google.maps.LatLng(40.0278, -105.2528),
-  new google.maps.LatLng(40.0374, -105.2560),
-  new google.maps.LatLng(40.0375, -105.2558),
-  new google.maps.LatLng(40.0376, -105.2546),
-  new google.maps.LatLng(40.0377, -105.2539),
-  new google.maps.LatLng(40.0378, -105.2528),
-  new google.maps.LatLng(40.0274, -105.2660),
-  new google.maps.LatLng(40.0275, -105.2658),
-  new google.maps.LatLng(40.0276, -105.2646),
-  new google.maps.LatLng(40.0277, -105.2639),
-  new google.maps.LatLng(40.0278, -105.2728),
-  new google.maps.LatLng(40.0374, -105.2760),
-  new google.maps.LatLng(40.0375, -105.2758),
-  new google.maps.LatLng(40.0376, -105.2746),
-  new google.maps.LatLng(40.0377, -105.2739),
-  new google.maps.LatLng(40.0378, -105.2728)
-];
-
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
 };
