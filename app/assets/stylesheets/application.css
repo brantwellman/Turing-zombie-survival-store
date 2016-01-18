@@ -268,3 +268,13 @@ a.brand-logo {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* Login */
+
+.create-acct {
+  font-size: 1.5em;
+}
+
+.create-acct a {
+  padding-top:4px;
+}
