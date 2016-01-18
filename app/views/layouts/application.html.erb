@@ -27,7 +27,6 @@
     <li class="divider"></li>
     <% end %>
   </ul>
-
   <ul id="account-dropdown" class="dropdown-content black">
     <% if current_user && current_user.admin? %>
       <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
@@ -43,17 +42,38 @@
   <nav>
     <div class="nav-wrapper">
       <%= link_to "Aberzombie & Fitch", items_path, class:"brand-logo" %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse right menu-icon"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+<<<<<<< HEAD
+          <li> <%= link_to "My Account", dashboard_path %>  </li>
         <% else %>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
         <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="right side-nav" id="mobile-demo">
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <li> <%= link_to "My Account", dashboard_path %>  </li>
+=======
+          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+>>>>>>> master
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Create Account", new_user_path %></li>
+        <% end %>
+        <li><%= link_to "My Duffel", duffel_path %></li>
+        <!-- Dropdown Trigger -->
+<<<<<<< HEAD
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+=======
         <li><a class="dropdown-button" href="#!" data-activates="category-dropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+>>>>>>> master
       </ul>
     </div>
   </nav>

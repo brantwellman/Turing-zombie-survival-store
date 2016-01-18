@@ -49,6 +49,23 @@ a.brand-logo {
   color: white;
 }
 
+.menu-icon {
+  position: relative;
+  left: -20px;
+}
+
+.side-nav {
+  background-color: rgba(0, 0, 0, .6)
+}
+
+.side-nav a {
+  color: rgba(219, 211, 202, 1)
+}
+
+.side-nav a:hover {
+  color: black;
+}
+
 /* Categories Side Bar */
 
 .categories-side-bar {
@@ -272,4 +289,14 @@ a.brand-logo {
   font-family: "Special Elite";
   font-weight: bold;
   font-size: 1.2em;
+}
+
+/* Login */
+
+.create-acct {
+  font-size: 1.5em;
+}
+
+.create-acct a {
+  padding-top:4px;
 }
