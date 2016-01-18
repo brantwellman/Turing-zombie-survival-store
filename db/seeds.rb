@@ -78,10 +78,10 @@ class Seed
         category_id: 1
       },
       {
-        title: "Arm Warmers",
+        title: "Arm Guards",
         price: 250,
-        description: "These probably won't actually keep your arms warm, but
-                      they will make it that much more inconvenient to slit your
+        description: "These will protect you from sneaky sideways zombie attacks
+                      AND make it that much more inconvenient to slit your
                       wrists!",
         image: "http://ecx.images-amazon.com/images/I/61WYNjrvQ2L._UY550_.jpg",
         category_id: 1
