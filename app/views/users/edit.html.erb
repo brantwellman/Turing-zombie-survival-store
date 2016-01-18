@@ -1,15 +1,11 @@
-<h3 class="center">Be prepared.</h3>
-<h1 class="center">Create an account:</h1>
+<h1 class="center">Edit Your Profile:</h1>
 
-<p id="required-field" class="container">
-  <%= "*Required field" %>
-</p>
 <div id="user-form" class="container">
   <%= form_for @user do |f| %>
-    *<%= f.label :first_name, class: "form-text" %>
+    <%= f.label :first_name, class: "form-text" %>
     <%= f.text_field :first_name %>
 
-    *<%= f.label :last_name, class: "form-text" %>
+    <%= f.label :last_name, class: "form-text" %>
     <%= f.text_field :last_name %>
 
     <%= f.label :address, class: "form-text" %>
@@ -24,15 +20,15 @@
     <%= f.label :zipcode, class: "form-text" %>
     <%= f.text_field :zipcode %>
 
-    *<%= f.label :email, class: "form-text" %>
+    <%= f.label :email, class: "form-text" %>
     <%= f.text_field :email %>
 
-    *<%= f.label :password, class: "form-text" %>
+    <%= f.label :password, class: "form-text" %>
     <%= f.password_field :password %>
 
-    *<%= f.label :password_confirmation, class: "form-text" %>
+    <%= f.label :password_confirmation, class: "form-text" %>
     <%= f.password_field :password_confirmation %>
 
-    <%= f.submit "Submit", class:"submit-btn" %>
+    <%= f.submit "Update Profile", class:"submit-btn" %>
   <% end %>
 </div>

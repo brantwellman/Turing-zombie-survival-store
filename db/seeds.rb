@@ -26,7 +26,35 @@ class Seed
         zipcode: "80202",
         email: "brant@email.com",
         password: "password",
+        password_confirmation: "password",
+      },
+      { first_name: "Penney",
+        last_name: "Gadget",
+        address: "3213 E Colfax Ave",
+        city: "Denver",
+        zipcode: "80206",
+        email: "penney@email.com",
+        password: "password",
         password_confirmation: "password"
+      },
+      { first_name: "Jamie",
+        last_name: "Crockett",
+        address: "1526 Blake St",
+        city: "Denver",
+        zipcode: "80202",
+        email: "jamie@email.com",
+        password: "password",
+        password_confirmation: "password"
+      },
+      { first_name: "Admin",
+        last_name: "Zombie Master",
+        address: "1434 Blake St",
+        city: "Denver",
+        zipcode: "80202",
+        email: "admin@email.com",
+        password: "password",
+        password_confirmation: "password",
+        role: 1
       }
     ])
   end
@@ -50,10 +78,10 @@ class Seed
         category_id: 1
       },
       {
-        title: "Arm Warmers",
+        title: "Arm Guards",
         price: 250,
-        description: "These probably won't actually keep your arms warm, but
-                      they will make it that much more inconvenient to slit your
+        description: "These will protect you from sneaky sideways zombie attacks
+                      AND make it that much more inconvenient to slit your
                       wrists!",
         image: "http://ecx.images-amazon.com/images/I/61WYNjrvQ2L._UY550_.jpg",
         category_id: 1
@@ -83,7 +111,7 @@ class Seed
       {
         title: "Boots for Him",
         price: 300,
-        description: "TThere's no reason not to look babely whilst chopping off
+        description: "There's no reason not to look babely whilst chopping off
                       heads.",
         image: "https://s-media-cache-ak0.pinimg.com/736x/47/08/24/4708247d527f4ac00f141621c67125b7.jpg",
         category_id: 1
@@ -284,7 +312,7 @@ class Seed
         title: "Original Mace",
         price: 600,
         description: "Pepper spray those zombies with spikes!!",
-        image: "http://www.weapons-universe.com/Medieval/Medieval-Maces/Medieval-Wooden-Double-Mace-Ball-PK-MB-2.jpg",
+        image: "http://i247.photobucket.com/albums/gg158/MDA2008/Mace.jpg",
         category_id: 3
       },
       {
