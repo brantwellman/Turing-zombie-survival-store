@@ -14,7 +14,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class = "background-image">
+
+<!-- Sets background image differently for the home page -->
+<% if current_page?(root_path) %>
+  <body class = "hero-image">
+<% else %>
+  <body class = "background-image">
+<% end %>
 
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content black">
