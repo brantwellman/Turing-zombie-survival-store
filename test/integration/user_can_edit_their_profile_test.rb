@@ -14,7 +14,7 @@ class UserCanEditTheirProfileTest < ActionDispatch::IntegrationTest
     fill_in "Address", with: "666 Apocalypse Blvd"
     fill_in "Zipcode", with: "80666"
 
-    click_on "Update Profile"
+    click_on "Submit"
     assert_equal dashboard_path, current_path
 
     refute page.has_content? "123 Zombie Ln"
