@@ -8,9 +8,7 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,31 +20,40 @@
   <body class = "background-image">
 <% end %>
 
-  <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content black">
+  <!-- Dropdown Info -->
+  <ul id="category-dropdown" class="dropdown-content black">
     <% all_categories.each do |category| %>
     <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
     <li class="divider"></li>
     <% end %>
   </ul>
-  <!-- Dropdown Structure -->
 
+  <ul id="account-dropdown" class="dropdown-content black">
+    <% if current_user && current_user.admin? %>
+      <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
+      <li class="divider"></li>
+    <% end %>
+    <li><%= link_to "Account Info", dashboard_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Past Orders", orders_path %></li>
+    <li class="divider"></li>
+  </ul>
+
+  <!-- Nav Structure -->
   <nav>
     <div class="nav-wrapper">
       <%= link_to "Aberzombie & Fitch", items_path, class:"brand-logo" %>
       <ul class="right hide-on-med-and-down">
-
-          <% if current_user %>
-            <li><%= link_to "Logout", logout_path, method: :delete %></li>
-            <li> <%= link_to "My Account", dashboard_path %>  </li>
-          <% else %>
-            <li><%= link_to "Login", login_path %></li>
-            <li><%= link_to "Create Account", new_user_path %></li>
-          <% end %>
-
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Create Account", new_user_path %></li>
+        <% end %>
         <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="category-dropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
   </nav>
