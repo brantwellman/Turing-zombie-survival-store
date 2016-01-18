@@ -188,8 +188,7 @@ a.brand-logo {
 }
 
 #user-form label,
-#login-form, label,
-#{
+#login-form, label {
   color: black;
 }
 
