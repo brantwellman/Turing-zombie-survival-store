@@ -3,13 +3,15 @@
 </div>
 
 <div class="container user-card center">
-
   <ul class="user-info">
     <li class="user-name"> <%= current_user.first_name %> <%= current_user.last_name %></li><br>
     <li class="user-email"><%= current_user.email %></li><br>
     <li class="user-address"><%= current_user.address %></li>
     <li class="user-city-state"><%= current_user.city %> <%= current_user.state %></li>
     <li class="user-zip"> <%= current_user.zipcode %></li><br>
-  </ul>
 
+    <div class="edit-profile-button">
+      <li><%= link_to "Edit Profile", edit_user_path(current_user), class:"btn black" %></li>
+    </div>
+  </ul>
 </div>
