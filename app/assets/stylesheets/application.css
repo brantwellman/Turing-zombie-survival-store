@@ -204,6 +204,11 @@ a.brand-logo {
   font-size: 1.2em;
 }
 
+#user-form label,
+#login-form, label {
+  color: black;
+}
+
 #required-field {
   font-family: "Special Elite";
   font-weight: bold;
