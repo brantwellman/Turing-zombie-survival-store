@@ -9,29 +9,30 @@ class OrderTest < ActiveSupport::TestCase
 
   test "item quantities method returns a quantity hash" do
     order = Order.create
-    order.items.create(title: "Hammer")
-    order.items.create(title: "Hammer")
-    order.items.create(title: "Bruised Apple")
+    order.items.create(title: "Hammer", description: "Hits", price: 2)
+    ord_item = order.order_items.first
+    ord_item.update_attribute(:quantity, 2)
+    order.items.create(title: "Bruised Apple", description: "Tastes good", price: 1)
 
     assert_equal({ "Bruised Apple" => 1, "Hammer" => 2 }, order.item_quantities)
   end
 
   test "item subtotal method returns subtotal of each different item" do
     order = Order.create
-    order.items.create(title: "Hammer", price: 10)
+    order.items.create(title: "Hammer", price: 10, description: "Hits")
     ord_item = order.order_items.first
     ord_item.update_attribute(:quantity, 2)
-    order.items.create(title: "Bruised Apple", price: 2)
+    order.items.create(title: "Bruised Apple", price: 2, description: "Tastes good")
 
     assert_equal([20, 2], order.item_subtotals)
   end
 
   test "returns sum of all subtotals" do
     order = Order.create
-    order.items.create(title: "Hammer", price: 10)
+    order.items.create(title: "Hammer", price: 10, description: "Hits")
     ord_item = order.order_items.first
     ord_item.update_attribute(:quantity, 2)
-    order.items.create(title: "Bruised Apple", price: 2)
+    order.items.create(title: "Bruised Apple", price: 2, description: "Tastes good")
 
     assert_equal 22, order.total
   end

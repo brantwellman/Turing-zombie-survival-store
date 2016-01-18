@@ -3,8 +3,8 @@ require "test_helper"
 class UserCanViewPastOrdersTest < ActionDispatch::IntegrationTest
   test "all order details are displayed" do
     user = create(:user)
-    item_1 = Item.create(title: "Hammer", price: 10)
-    item_2 = Item.create(title: "Ax", price: 500)
+    item_1 = Item.create(title: "Hammer", price: 10, description: "It hits")
+    item_2 = Item.create(title: "Ax", price: 500, description: "It cuts")
     login(user)
 
     visit item_path(item_1)

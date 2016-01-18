@@ -13,8 +13,6 @@ class AdminCreatesNewItemTest < ActionDispatch::IntegrationTest
     fill_in "Description", with: "Home run!"
     fill_in "Price", with: 20
     select "Books", from: "item[category_id]"
-
-
     click_on "Submit"
 
     assert_equal item_path(Item.last), current_path
@@ -24,9 +22,4 @@ class AdminCreatesNewItemTest < ActionDispatch::IntegrationTest
       assert page.has_css? "img[src=\"#{image_path}\"]"
     end
   end
-
-  # test "all fields must filled in" do
-  # title must be unique - across all items
-  # price must be valid decmial numeric value > 0
-  # end
 end
