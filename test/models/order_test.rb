@@ -12,7 +12,11 @@ class OrderTest < ActiveSupport::TestCase
     order.items.create(title: "Hammer", description: "Hits", price: 2)
     ord_item = order.order_items.first
     ord_item.update_attribute(:quantity, 2)
-    order.items.create(title: "Bruised Apple", description: "Tastes good", price: 1)
+    order.items.create(
+      title: "Bruised Apple",
+      description: "Tastes good",
+      price: 1
+    )
 
     assert_equal({ "Bruised Apple" => 1, "Hammer" => 2 }, order.item_quantities)
   end
@@ -22,17 +26,29 @@ class OrderTest < ActiveSupport::TestCase
     order.items.create(title: "Hammer", price: 10, description: "Hits")
     ord_item = order.order_items.first
     ord_item.update_attribute(:quantity, 2)
-    order.items.create(title: "Bruised Apple", price: 2, description: "Tastes good")
+    order.items.create(
+      title: "Bruised Apple",
+      price: 2,
+      description: "Tastes good"
+    )
 
     assert_equal([20, 2], order.item_subtotals)
   end
 
   test "returns sum of all subtotals" do
     order = Order.create
-    order.items.create(title: "Hammer", price: 10, description: "Hits")
+    order.items.create(
+      title: "Hammer",
+      price: 10,
+      description: "Hits"
+    )
     ord_item = order.order_items.first
     ord_item.update_attribute(:quantity, 2)
-    order.items.create(title: "Bruised Apple", price: 2, description: "Tastes good")
+    order.items.create(
+      title: "Bruised Apple",
+      price: 2,
+      description: "Tastes good"
+    )
 
     assert_equal 22, order.total
   end
