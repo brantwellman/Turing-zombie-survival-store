@@ -224,6 +224,12 @@ a.brand-logo {
 #item-form label {
   color: black;
 }
+.dropdown-content li span {
+  color: white;
+}
+.dropdown-content li span:hover {
+  color: black;
+}
 
 #required-field {
   font-family: "Special Elite";
