@@ -45,6 +45,10 @@ a.brand-logo {
   font-family: "Special Elite";
 }
 
+.dropdown-content {
+  background-color: rgb(36, 3, 6);
+}
+
 .dropdown-content li a{
   color: white;
 }
