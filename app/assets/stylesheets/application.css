@@ -45,6 +45,10 @@ a.brand-logo {
   font-family: "Special Elite";
 }
 
+.dropdown-content {
+  background-color: rgb(36, 3, 6);
+}
+
 .dropdown-content li a{
   color: white;
 }
@@ -82,11 +86,18 @@ a.brand-logo {
   padding-top: 6px;
 }
 
+.category-link a {
+}
+
 .first-link {
   margin-top: 40px;
 }
 
   /* Items Section */
+
+.card-title a {
+  color: rgb(36, 3, 6);
+}
 
 .items-column {
   padding: 10px;
@@ -122,6 +133,10 @@ a.brand-logo {
 
 .item-title {
   font-size: 1.1em;
+}
+
+.item-title a:hover {
+  color: rgb(36, 3, 6);
 }
 
 .site-font {
@@ -185,7 +200,7 @@ a.brand-logo {
 
 /*Forms*/
 
-#login-form, #user-form {
+#login-form, #user-form, #item-form {
   background-color: rgba(219, 211, 202, .6);
   font-family: "Special Elite";
   font-weight: bold;
@@ -205,7 +220,8 @@ a.brand-logo {
 }
 
 #user-form label,
-#login-form label {
+#login-form label,
+#item-form label {
   color: black;
 }
 
@@ -216,7 +232,18 @@ a.brand-logo {
   font-size: .9em
 }
 
+/*Item Show*/
 
+#item-show {
+  background-color: rgba(219, 211, 202, .6);
+  padding: 15px;
+  margin-top: 100px;
+}
+
+#item-show img{
+  width: 75%;
+  padding-top: 15px;
+}
 /*Flash Notices*/
 
 .flashes {

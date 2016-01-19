@@ -20,14 +20,31 @@
   <body class = "background-image">
 <% end %>
 
-  <!-- Dropdown Info -->
-  <ul id="category-dropdown" class="dropdown-content black">
+  <!-- Dropdown Setups. Duplicates to account for side-nav -->
+  <ul id="category-dropdown1" class="dropdown-content">
     <% all_categories.each do |category| %>
     <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
     <li class="divider"></li>
     <% end %>
   </ul>
-  <ul id="account-dropdown" class="dropdown-content black">
+  <ul id="category-dropdown2" class="dropdown-content">
+    <% all_categories.each do |category| %>
+    <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
+    <li class="divider"></li>
+    <% end %>
+  </ul>
+
+  <ul id="account-dropdown1" class="dropdown-content">
+    <% if current_user && current_user.admin? %>
+      <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
+      <li class="divider"></li>
+    <% end %>
+    <li><%= link_to "Account Info", dashboard_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Past Orders", orders_path %></li>
+    <li class="divider"></li>
+  </ul>
+  <ul id="account-dropdown2" class="dropdown-content">
     <% if current_user && current_user.admin? %>
       <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
       <li class="divider"></li>
@@ -46,26 +63,26 @@
       <ul class="main-nav right hide-on-med-and-down">
         <% if current_user %>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
-          <% else %>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to "Create Account", new_user_path %></li>
-        <% end %>
-        <li><%= link_to "My Duffel", duffel_path %></li>
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="category-dropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-      <ul class="right side-nav" id="mobile-demo">
-        <% if current_user %>
-          <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown1" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
         <% else %>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
         <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button" href="#!" data-activates="category-dropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="category-dropdown1" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <ul class="right side-nav" id="mobile-demo">
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown2" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Create Account", new_user_path %></li>
+        <% end %>
+        <li><%= link_to "My Duffel", duffel_path %></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="category-dropdown2" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
 
       </ul>
     </div>
