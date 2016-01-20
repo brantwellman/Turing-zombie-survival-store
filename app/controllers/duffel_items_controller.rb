@@ -4,7 +4,7 @@ class DuffelItemsController < ApplicationController
     @duffel.add_item(item.id)
     session[:duffel] = @duffel.contents
     flash[:notice] = "We stuffed the #{item.title} in your Go-Bag"
-    redirect_to items_path
+    redirect_to URI(request.referer).path
   end
 
   def index
