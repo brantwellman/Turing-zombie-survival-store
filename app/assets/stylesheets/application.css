@@ -333,7 +333,11 @@ a.brand-logo {
 
 html, body { height: 100%; margin: 0; padding: 0; }
 
-#map-canvas { height: 300px; }
+#map {
+  height: 500px;
+  width: 80%;
+  position: center;
+}
 
 
 /* Login */
