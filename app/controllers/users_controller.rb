@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Logged in as #{@user.first_name}"
-      path = RedirectPreparer.set(session[:referrer], dashboard_path)
+      path = redirect_path(session[:referrer], dashboard_path)
       session[:referrer] = nil
       redirect_to path
     else
