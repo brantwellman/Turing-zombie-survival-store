@@ -1,6 +1,9 @@
 class MapsController < ApplicationController
   def show
-    @users = User.all
-    @safe_houses = @users.safe_houses
+    @safe_houses = User.safe_houses
+  end
+
+  def index
+
   end
 end

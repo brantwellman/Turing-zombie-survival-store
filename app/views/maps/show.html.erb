@@ -1,14 +1,45 @@
-<h1 class="center">Apocolypse Map</h1>
+<h1 class="center">Zombie Apocalypse Map</h1>
 
-<!-- <div id="floating-panel">
-  <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-</div> -->
-<div id="map" class="container"></div>
+<!-- Google Map -->
+<div id="map" style="width: 500px; height: 400px;"></div>
+<div>
+  <script>
 
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb-Z-1WIuMpit1K4lnZiziGQeJMOJ8MTw&callback=initMap">
-</script>
 
-<script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
-</script>
+  // @safe_houses
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(-37.92, 151.25),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+        <% @safe_houses.each_index do |i|  %>
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(<%= @safe_houses[i].latitude %>, <%= @safe_houses[i].longitude %>),
+            map: map
+          });
+          <% end %>
+
+
+  </script>
+
+</div>
+
+
+
+
+<!--
+// var myLatlng = new google.maps.LatLng({lat: 39.7392, lng: -104.9903});
+// var mapOptions = {
+//   zoom: 13,
+//   center: myLatlng,
+//   disableDefaultUI: true
+// }
+// var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
