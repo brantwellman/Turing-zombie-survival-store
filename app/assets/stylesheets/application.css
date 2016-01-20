@@ -15,6 +15,11 @@
  //= require material_icons
  */
 
+@font-face {
+  font-family: "Survival Horror";
+  src: url("/assets/survival_horror.ttf");
+}
+
 /* Headers */
 h1 {
   font-size: 2.5em;
@@ -59,11 +64,11 @@ a.brand-logo {
 }
 
 .side-nav {
-  background-color: rgba(0, 0, 0, .6)
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .side-nav a {
-  color: rgba(219, 211, 202, 1)
+  color: rgba(219, 211, 202, 1);
 }
 
 .side-nav a:hover {
@@ -250,11 +255,6 @@ a.brand-logo {
   width: 75%;
   padding-top: 15px;
 }
-
-.admin-btns {
-  text-align: left;
-}
-
 /*Flash Notices*/
 
 .flashes {
@@ -337,4 +337,40 @@ a.brand-logo {
 
 .create-acct a {
   padding-top:4px;
+}
+
+/*Rules Page*/
+
+.rules-card {
+  padding-top: 25px;
+  width: 80%;
+  height: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.zombie-font {
+  font-family: "Survival Horror";
+  font-size: 3em;
+}
+
+.rules-header {
+  font-family: "Survival Horror";
+  font-size: 96px;
+}
+
+#rules-body {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(139, 0, 0);
+}
+
+#rules-item {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(128, 0, 0);
+  font-weight: bold;
+  font-size: 1.6em;
 }
