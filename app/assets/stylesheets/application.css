@@ -15,6 +15,12 @@
  //= require material_icons
  */
 
+@font-face {
+  font-family: "Survival Horror";
+  src: url("/assets/survival_horror.ttf");
+  url("/assets/survival_horror.ttf") format("truetype");
+}
+
 /* Headers */
 h1 {
   font-size: 2.5em;
@@ -332,4 +338,28 @@ a.brand-logo {
 
 .create-acct a {
   padding-top:4px;
+}
+
+/*Rules Page*/
+
+.rules-card {
+  padding-top: 25px;
+  width: 80%;
+  height: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.zombie-font {
+  font-family: "Survival Horror";
+  font-size: 3em;
+}
+
+#rules-header {
+  font-family: "Survival Horror";
+  font-size: 96px;
 }
