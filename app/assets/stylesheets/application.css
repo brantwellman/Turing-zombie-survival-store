@@ -18,7 +18,6 @@
 @font-face {
   font-family: "Survival Horror";
   src: url("/assets/survival_horror.ttf");
-  url("/assets/survival_horror.ttf") format("truetype");
 }
 
 /* Headers */
@@ -65,11 +64,11 @@ a.brand-logo {
 }
 
 .side-nav {
-  background-color: rgba(0, 0, 0, .6)
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .side-nav a {
-  color: rgba(219, 211, 202, 1)
+  color: rgba(219, 211, 202, 1);
 }
 
 .side-nav a:hover {
@@ -256,11 +255,6 @@ a.brand-logo {
   width: 75%;
   padding-top: 15px;
 }
-
-.admin-btns {
-  text-align: left;
-}
-
 /*Flash Notices*/
 
 .flashes {
@@ -364,7 +358,19 @@ a.brand-logo {
   font-size: 3em;
 }
 
-#rules-header {
+.rules-header {
   font-family: "Survival Horror";
   font-size: 96px;
+}
+
+#rules-body {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(139, 0, 0);
+}
+
+#rules-item {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(128, 0, 0);
+  font-weight: bold;
+  font-size: 1.6em;
 }
