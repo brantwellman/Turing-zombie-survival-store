@@ -1,0 +1,20 @@
+<h1 class="center">Edit Item:</h1>
+
+
+<div id="item-form" class="container">
+  <%= form_for(@item, url: admin_item_path(@item)) do |f| %>
+    <%= f.label :title, class: "form-text" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description, class: "form-text" %>
+    <%= f.text_area :description %>
+
+    <%= f.label :price, class: "form-text" %>
+    <%= f.text_field :price %>
+
+    <%= f.label :category, id: "form-dropdown", class: "form-text" %>
+    <%= f.collection_select :category_id, @categories, :id, :title, include_blank: true %>
+
+    <%= f.submit "Update Item" %>
+  <% end %>
+</div>

@@ -256,6 +256,11 @@ a.brand-logo {
   width: 75%;
   padding-top: 15px;
 }
+
+.admin-btns {
+  text-align: left;
+}
+
 /*Flash Notices*/
 
 .flashes {
