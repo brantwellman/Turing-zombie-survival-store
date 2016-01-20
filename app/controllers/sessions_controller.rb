@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       if @user.admin?
         flash[:notice] = "Logged in with admin access."
-        redirect_to admin_dashboard_path
+        path = RedirectPreparer.set_redirect(session[:referrer], admin_dashboard_path)
+        redirect_to path
       else
         flash[:notice] = "Logged in as #{@user.first_name}"
         path = RedirectPreparer.set_redirect(session[:referrer], dashboard_path)
