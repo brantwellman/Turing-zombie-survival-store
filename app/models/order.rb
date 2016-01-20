@@ -23,7 +23,11 @@ class Order < ActiveRecord::Base
   end
 
   def item_quantities
-    items.group(:title).count
+    quantities = {}
+    order_items.each do |ord_item|
+      quantities[ord_item.item.title] = ord_item.quantity
+    end
+    quantities
   end
 
   def item_quantity(item_id)

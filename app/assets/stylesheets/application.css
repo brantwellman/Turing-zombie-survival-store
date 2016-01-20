@@ -45,8 +45,29 @@ a.brand-logo {
   font-family: "Special Elite";
 }
 
+.dropdown-content {
+  background-color: rgb(36, 3, 6);
+}
+
 .dropdown-content li a{
   color: white;
+}
+
+.menu-icon {
+  position: relative;
+  left: -20px;
+}
+
+.side-nav {
+  background-color: rgba(0, 0, 0, .6)
+}
+
+.side-nav a {
+  color: rgba(219, 211, 202, 1)
+}
+
+.side-nav a:hover {
+  color: black;
 }
 
 /* Categories Side Bar */
@@ -65,11 +86,18 @@ a.brand-logo {
   padding-top: 6px;
 }
 
+.category-link a {
+}
+
 .first-link {
   margin-top: 40px;
 }
 
   /* Items Section */
+
+.card-title a {
+  color: rgb(36, 3, 6);
+}
 
 .items-column {
   padding: 10px;
@@ -105,6 +133,10 @@ a.brand-logo {
 
 .item-title {
   font-size: 1.1em;
+}
+
+.item-title a:hover {
+  color: rgb(36, 3, 6);
 }
 
 .site-font {
@@ -168,16 +200,13 @@ a.brand-logo {
 
 /*Forms*/
 
-#login-form, #new-user-form {
+#login-form, #user-form, #item-form {
   background-color: rgba(219, 211, 202, .6);
   font-family: "Special Elite";
   font-weight: bold;
   width: 50%;
-}
-
-#new-user-form {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .submit-btn {
@@ -190,6 +219,18 @@ a.brand-logo {
   font-size: 1.2em;
 }
 
+#user-form label,
+#login-form label,
+#item-form label {
+  color: black;
+}
+.dropdown-content li span {
+  color: white;
+}
+.dropdown-content li span:hover {
+  color: black;
+}
+
 #required-field {
   font-family: "Special Elite";
   font-weight: bold;
@@ -197,6 +238,22 @@ a.brand-logo {
   font-size: .9em
 }
 
+/*Item Show*/
+
+#item-show {
+  background-color: rgba(219, 211, 202, .6);
+  padding: 15px;
+  margin-top: 100px;
+}
+
+#item-show img{
+  width: 75%;
+  padding-top: 15px;
+}
+
+.admin-btns {
+  text-align: left;
+}
 
 /*Flash Notices*/
 
@@ -236,6 +293,10 @@ a.brand-logo {
   font-size: 1.8em;
 }
 
+.edit-profile-button {
+  margin-top: 100px;
+}
+
 /*Individual Past Order*/
 
 .order-item-table {
@@ -273,3 +334,14 @@ a.brand-logo {
 html, body { height: 100%; margin: 0; padding: 0; }
 
 #map { height: 100%; }
+
+
+/* Login */
+
+.create-acct {
+  font-size: 1.5em;
+}
+
+.create-acct a {
+  padding-top:4px;
+}

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 
 
@@ -106,3 +107,10 @@ var heatmapData = [
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
 };
+
+$(document).ready(function() {
+  $('select').material_select();
+  $(".button-collapse").sideNav({
+    edge: "right",
+  });
+});

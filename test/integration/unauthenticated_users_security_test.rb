@@ -19,7 +19,9 @@ class UnauthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
 
     visit items_path
     click_on "Add to Duffel"
-    click_on "My Duffel"
+    within ".main-nav" do
+      click_on "My Duffel"
+    end
     click_on "Checkout"
 
     assert_equal login_path, current_path
