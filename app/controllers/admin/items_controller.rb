@@ -1,4 +1,7 @@
 class Admin::ItemsController < Admin::BaseController
+  before_action :find_item, only: [:edit, :update, :destroy]
+  before_action :find_categories, only: [:edit, :update]
+
   def new
     @item = Item.new
     @categories = Category.all
@@ -15,6 +18,21 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @item.update(item_params)
+    flash[:notice] = "Item Updated!"
+    redirect_to @item
+  end
+
+  def destroy
+    @item.destroy
+    flash[:notice] = "Item Deleted!"
+    redirect_to @item
+  end
+
   private
 
   def item_params
@@ -25,5 +43,13 @@ class Admin::ItemsController < Admin::BaseController
       :category_id,
       :image
     )
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
+  def find_categories
+    @categories = Category.all
   end
 end
