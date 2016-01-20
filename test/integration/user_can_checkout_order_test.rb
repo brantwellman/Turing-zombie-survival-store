@@ -30,7 +30,6 @@ class UserCanCheckoutOrder < ActionDispatch::IntegrationTest
   end
 
   test "unregistered user redirects back to duffel after creating an account" do
-    user = create(:user)
     create(:item)
 
     visit items_path
@@ -41,7 +40,7 @@ class UserCanCheckoutOrder < ActionDispatch::IntegrationTest
 
     assert_equal login_path, current_path
 
-    within '.create-acct' do
+    within ".create-acct" do
       click_on "Save yourself"
     end
     fill_in "First name", with: "Penney"

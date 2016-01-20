@@ -4,10 +4,8 @@ class RegisteredUserCanLoginTest < ActionDispatch::IntegrationTest
   test "registered user can log back in and see their dashboard" do
     user = create(:user)
 
-    visit root_path
-    within '.main-nav' do
-      click_link "Login"
-    end
+    visit login_path
+
     fill_in "Email", with: user.email
     fill_in "Password", with: "password"
     click_button "Login"
