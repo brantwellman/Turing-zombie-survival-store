@@ -30,6 +30,10 @@ h3 {
   font-family: "Special Elite";
 }
 
+.admin-header {
+  font-size:3em;
+}
+
 .warning-header {
   float: left;
 }
@@ -160,7 +164,7 @@ a.brand-logo {
   width: 100px;
 }
 
-.duffel-table {
+.duffel-table, .order-table {
     background-color: rgba(219, 211, 202, .6);
 }
 
@@ -201,6 +205,28 @@ a.brand-logo {
 #subtotal {
   font-weight: bold;
   font-size: 1.2em;
+}
+
+/* Admin Orders Index */
+
+.order-status-side-bar {
+  height: 600px;
+  font-family: "Special Elite";
+}
+
+.item-manager {
+  margin-top: 50px;
+}
+
+#user-orders {
+  margin-top: 50px;
+  position: relative;
+  left: -30px;
+}
+
+.user-orders-header {
+  position: relative;
+  left: -30px;
 }
 
 /*Forms*/

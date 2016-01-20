@@ -5,6 +5,10 @@ class Order < ActiveRecord::Base
   has_many :items, through: :order_items
   has_many :order_items
   before_create :set_status
+  scope :ordered, -> { where(status: "ordered") }
+  scope :paid, -> { where(status: "paid") }
+  scope :canceled, -> { where(status: "canceled") }
+  scope :completed, -> { where(status: "completed") }
 
   def set_status
     self.status ||= "ordered"
@@ -48,5 +52,13 @@ class Order < ActiveRecord::Base
 
   def total
     item_subtotals.sum
+  end
+
+  def self.filter_orders(status)
+    where(status: status)
+  end
+
+  def self.set_status_breakdown
+    group(:status).count
   end
 end
