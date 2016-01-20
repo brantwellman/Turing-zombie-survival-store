@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
+  scope :safe_houses, where(:safe_house => true)
 
   has_many :orders
 
@@ -17,4 +18,6 @@ class User < ActiveRecord::Base
       address + ", " + city + ", " + state + ", " + zipcode
     end
   end
+
+  
 end

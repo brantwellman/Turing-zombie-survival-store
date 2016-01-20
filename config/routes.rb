@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   resources :duffel_items, only: [:create, :update]
 
   get "/dashboard", to: "users#show"
-
   get "/duffel", to: "duffel_items#index"
+  get "/rules", to: "resources#rules"
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

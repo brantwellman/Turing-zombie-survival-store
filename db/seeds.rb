@@ -25,6 +25,7 @@ class Seed
         city: "Denver",
         zipcode: "80202",
         email: "brant@email.com",
+        safe_house: true,
         password: "password",
         password_confirmation: "password",
       },
@@ -34,6 +35,7 @@ class Seed
         city: "Denver",
         zipcode: "80206",
         email: "penney@email.com",
+        safe_house: true,
         password: "password",
         password_confirmation: "password"
       },
@@ -42,6 +44,7 @@ class Seed
         address: "1526 Blake St",
         city: "Denver",
         zipcode: "80202",
+        safe_house: true,
         email: "jamie@email.com",
         password: "password",
         password_confirmation: "password"
@@ -51,6 +54,7 @@ class Seed
         address: "1434 Blake St",
         city: "Denver",
         zipcode: "80202",
+        safe_house: true,
         email: "admin@email.com",
         password: "password",
         password_confirmation: "password",

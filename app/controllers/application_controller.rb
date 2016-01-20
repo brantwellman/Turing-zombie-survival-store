@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
   def unauthenticated_user_error
     render(file: "/public/404") unless current_user
   end
+
+  def redirect_path(referrer, normal_redirect)
+    referrer || normal_redirect
+  end
 end
