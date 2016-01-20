@@ -32,7 +32,7 @@ class OrderTest < ActiveSupport::TestCase
       description: "Tastes good"
     )
 
-    assert_equal([20, 2], order.item_subtotals)
+    assert_equal([2, 20], order.item_subtotals.sort)
   end
 
   test "returns sum of all subtotals" do
