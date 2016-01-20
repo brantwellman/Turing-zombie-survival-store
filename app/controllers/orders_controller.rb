@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
         redirect_to orders_path
       end
     else
+      session[:referrer] = URI(request.referrer).path
       redirect_to login_path
     end
   end

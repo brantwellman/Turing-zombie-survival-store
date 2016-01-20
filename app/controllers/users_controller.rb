@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Logged in as #{@user.first_name}"
-      redirect_to dashboard_path
+      path = RedirectPreparer.set_redirect(session[:referrer], dashboard_path)
+      session[:referrer] = nil
+      redirect_to path
     else
       flash.now[:error] = @user.errors.full_messages.join(", ")
       render :new

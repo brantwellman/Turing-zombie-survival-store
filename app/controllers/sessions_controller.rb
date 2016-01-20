@@ -11,7 +11,9 @@ class SessionsController < ApplicationController
         redirect_to admin_dashboard_path
       else
         flash[:notice] = "Logged in as #{@user.first_name}"
-        redirect_to dashboard_path
+        path = RedirectPreparer.set_redirect(session[:referrer], dashboard_path)
+        session[:referrer] = nil
+        redirect_to path
       end
     else
       flash.now[:error] = "Your email or password is incorrect"
