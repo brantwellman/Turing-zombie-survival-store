@@ -1,4 +1,7 @@
 <h1 class="center">Zombie Apocalypse Map</h1>
+<p class = "map-key site-font center">
+  Markers designate safe houses in your area.
+</p>
 
 <!-- Google Map -->
 <div id="map"></div>
@@ -16,7 +19,7 @@
       }
     });
 
-    <% @safe_houses.each_index do |i|  %>
+    <% @safe_houses.each_index do |i| %>
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(<%= @safe_houses[i].latitude %>, <%= @safe_houses[i].longitude %>),
         map: map

@@ -20,6 +20,6 @@ class User < ActiveRecord::Base
   end
 
   def self.safe_houses
-    where(safe_house: true)
+    where(safe_house: 1)
   end
 end

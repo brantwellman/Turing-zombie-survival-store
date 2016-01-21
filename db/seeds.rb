@@ -25,9 +25,8 @@ class Seed
         city: "Denver",
         state: "CO",
         zipcode: "80202",
-        state: "CO",
         email: "brant@email.com",
-        safe_house: true,
+        safe_house: 1,
         password: "password",
         password_confirmation: "password"
       },
@@ -37,9 +36,8 @@ class Seed
         city: "Denver",
         state: "CO",
         zipcode: "80206",
-        state: "CO",
         email: "penney@email.com",
-        safe_house: true,
+        safe_house: 1,
         password: "password",
         password_confirmation: "password"
       },
@@ -49,7 +47,7 @@ class Seed
         city: "Denver",
         state: "CO",
         zipcode: "80202",
-        safe_house: true,
+        safe_house: 1,
         email: "jamie@email.com",
         password: "password",
         password_confirmation: "password"

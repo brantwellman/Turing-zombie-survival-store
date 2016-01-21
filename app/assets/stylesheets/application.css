@@ -360,12 +360,19 @@ a.brand-logo {
 html, body { height: 100%; margin: 0; padding: 0; }
 
 #map {
-  height: 500px;
-  width: 80%;
+  height: 100%;
+  width: 90%;
   position: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border: solid black;
+  border-style: groove;
 }
 
-
+.map-key {
+  font-size: 1.8em;
+}
 /* Login */
 
 .create-acct {

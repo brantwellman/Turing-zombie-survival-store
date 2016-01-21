@@ -30,7 +30,7 @@
     *<%= f.label :password_confirmation, class: "form-text" %>
     <%= f.password_field :password_confirmation %>
 
-    <%= check_box_tag "user_safe_house" %>
+    <%= f.check_box "safe_house" %>
     <%= f.label "safe_house", "Would you volunteer your home as a safe house?" %>
 
     <%#= f.label :would_you_volunteer_your_home_as_a_safe_house?, id: "user_safe_house", class: "form-text" %>
