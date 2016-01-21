@@ -27,11 +27,9 @@ class Order < ActiveRecord::Base
   end
 
   def item_quantities
-    quantities = {}
-    order_items.each do |ord_item|
+    order_items.each_with_object({}) do |ord_item, quantities|
       quantities[ord_item.item.title] = ord_item.quantity
     end
-    quantities
   end
 
   def item_quantity(item_id)
