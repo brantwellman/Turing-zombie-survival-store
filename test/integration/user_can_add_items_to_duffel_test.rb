@@ -10,7 +10,9 @@ class UserCanAddItemsToDuffel < ActionDispatch::IntegrationTest
     assert page.has_link? "Add to Duffel"
     click_link "Add to Duffel"
     click_link "Add to Duffel"
-    click_link "My Duffel"
+    within ".main-nav" do
+      click_link "My Duffel"
+    end
 
     assert "/duffel", current_path
 

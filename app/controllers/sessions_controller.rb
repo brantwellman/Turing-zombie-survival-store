@@ -8,10 +8,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       if @user.admin?
         flash[:notice] = "Logged in with admin access."
-        redirect_to admin_dashboard_path
+        path = redirect_path(session[:referrer], admin_dashboard_path)
+        session[:referrer] = nil
+        redirect_to path
       else
         flash[:notice] = "Logged in as #{@user.first_name}"
-        redirect_to dashboard_path
+        path = redirect_path(session[:referrer], dashboard_path)
+        session[:referrer] = nil
+        redirect_to path
       end
     else
       flash.now[:error] = "Your email or password is incorrect"

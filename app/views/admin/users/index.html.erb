@@ -1,1 +1,72 @@
-<h1 class="center">Admin Dashboard</h1>
+<h1 class="admin-header center">Admin Dashboard</h1>
+
+<div class="row">
+  <div class="center-align col s3 order-status-side-bar">
+    <h4>Order Status</h4>
+    <div id="all-orders">
+      <%= link_to "All Orders", admin_dashboard_path, id:"all-orders-filter", class:"btn black category-link first-link" %>
+    </div>
+    <div id="ordered-orders">
+      <%= link_to "Ordered", admin_dashboard_path(filter: "ordered"), id:"ordered-filter", class:"btn black category-link" %>
+    </div>
+    <div id="paid-orders">
+      <%= link_to "Paid", admin_dashboard_path(filter: "paid"), id:"paid-filter", class:"btn black category-link" %>
+    </div>
+    <div id="canceled-orders">
+      <%= link_to "Canceled", admin_dashboard_path(filter:"canceled"), data: {id: "canceled"}, id:"canceled-filter", class:"btn black category-link" %>
+    </div>
+    <div id="completed-orders">
+      <%= link_to "Completed", admin_dashboard_path(filter: "completed"), id:"completed-filter", class:"btn black category-link" %>
+    </div>
+    <div class="item-manager">
+      <h4>Item Manager</h4>
+      <div class="create-item-button center">
+        <%= link_to "Create New Item", new_admin_item_path, class: "btn black site-font" %>
+      </div>
+    </div> <!-- end of item manager -->
+  </div>
+
+  <div class="col s9">
+    <h4 class="user-orders-header center site-font">Orders</h4>
+    <table id="user-orders" class="site-font order-table bordered highlight">
+      <thead>
+        <tr class="order-table table-headers">
+            <th class="center" data-field="first_name">Name</th>
+            <th class="center" data-field="date">Date</th>
+            <th class="center" data-field="total">Total</th>
+            <th class="center" data-field="status">Status</th>
+            <th data-field="button"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @orders.each do |order| %>
+
+
+            <tr class="order-table" data-status="<%= order.status %>">
+
+              <td class="order-name center">
+                <%= order.user.first_name %> <%= order.user.last_name %>
+              </td>
+
+              <td class="center">
+                <%= order.formatted_date %>
+              </td>
+
+              <td class="center">
+                <%= order.total %>
+              </td>
+
+              <td class="center statuss">
+                <%= order.status %>
+              </td>
+
+              <td class="button center">
+                <%= link_to "View Order", order_path(order), class: "btn black" %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- End of row -->
