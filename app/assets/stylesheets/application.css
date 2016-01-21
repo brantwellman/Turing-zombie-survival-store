@@ -231,7 +231,7 @@ a.brand-logo {
 
 /*Forms*/
 
-#login-form, #user-form, #item-form {
+#login-form, #user-form, #item-form, #outbreak-form {
   background-color: rgba(219, 211, 202, .6);
   font-family: "Special Elite";
   font-weight: bold;
