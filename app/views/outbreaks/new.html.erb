@@ -1,0 +1,14 @@
+<h1>Report an Outbreak:</h1>
+
+<div id="login-form" class="container">
+
+  <%= form_for(@outbreak, url: report_path) do |f| %>
+    <%= f.label :address, class: "form-text" %>
+    <%= f.text_field :address %>
+
+    <%= f.label :category, id: "form-dropdown", class: "form-text" %>
+    <%= f.select :danger, (0..10).map {|i| [i,i] } %>
+
+    <%= f.submit "Report Outbreak" %>
+  <% end %>
+</div>
