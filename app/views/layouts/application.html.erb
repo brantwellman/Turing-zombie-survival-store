@@ -28,19 +28,21 @@
   <ul id="resources-dropdown1" class="dropdown-content">
     <li><%= link_to "Map", map_path %></li>
     <li class="divider"></li>
-    <li><%= link_to "Account Info", dashboard_path %></li>
+    <li><%= link_to "Report an Outbreak", "#" %></li>
     <li class="divider"></li>
-    <li><%= link_to "Past Orders", orders_path %></li>
+    <li><%= link_to "The Rules", rules_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Zombie Practice", "#" %></li>
     <li class="divider"></li>
   </ul>
   <ul id="resources-dropdown2" class="dropdown-content">
-    <% if current_user && current_user.admin? %>
-      <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
-      <li class="divider"></li>
-    <% end %>
-    <li><%= link_to "Account Info", dashboard_path %></li>
+    <li><%= link_to "Map", map_path %></li>
     <li class="divider"></li>
-    <li><%= link_to "Past Orders", orders_path %></li>
+    <li><%= link_to "Report an Outbreak", "#" %></li>
+    <li class="divider"></li>
+    <li><%= link_to "The Rules", rules_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Zombie Practice", "#" %></li>
     <li class="divider"></li>
   </ul>
 
@@ -93,21 +95,23 @@
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
-        <li><%= link_to "My Duffel", duffel_path %></li>
+        <li><a class="dropdown-button" href="#!" data-activates="resources-dropdown1" data-beloworigin="true">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="category-dropdown1" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><%= link_to "My Duffel", duffel_path %></li>
       </ul>
       <ul class="right side-nav" id="mobile-demo">
         <% if current_user %>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown2" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="resources-dropdown2" data-beloworigin="true">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
         <% else %>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
-        <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="account-dropdown2" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-button" href="#!" data-activates="category-dropdown2" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><%= link_to "My Duffel", duffel_path %></li>
 
       </ul>
     </div>

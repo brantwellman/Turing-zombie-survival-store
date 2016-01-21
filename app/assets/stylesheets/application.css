@@ -388,7 +388,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 .rules-card {
   padding-top: 25px;
   width: 80%;
-  height: 80%;
+  height: 2500px;
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: rgba(219, 211, 202, .6);
