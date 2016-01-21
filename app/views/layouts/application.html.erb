@@ -46,8 +46,6 @@
     <li class="divider"></li>
   </ul>
 
-
-
   <ul id="category-dropdown1" class="dropdown-content">
     <% all_categories.each do |category| %>
     <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
