@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/map", to: "maps#show"
+
+  get "/report", to: "outbreaks#new"
+  post "/report", to: "outbreaks#create"
+
   get "/game", to: "games#show"
 end

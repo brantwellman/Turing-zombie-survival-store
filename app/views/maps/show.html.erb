@@ -8,8 +8,8 @@
 <div>
   <script>
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 12,
-      center: new google.maps.LatLng(39.7392, -104.9903),
+      zoom: 13,
+      center: new google.maps.LatLng(39.7495, -104.9999),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       streetViewControl: false,
@@ -25,5 +25,19 @@
         map: map
       });
     <% end %>
+
+    <% @outbreaks.each_index do |i| %>
+      var circle = new google.maps.Circle({
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.6,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.2,
+        map: map,
+        center: new google.maps.LatLng(<%= @outbreaks[i].latitude %>, <%= @outbreaks[i].longitude %>),
+        radius: <%= @outbreaks[i].danger * 75 %>
+      });
+    <% end %>
+
   </script>
 </div>
