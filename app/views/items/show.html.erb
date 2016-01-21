@@ -1,19 +1,19 @@
-<h1><%= @item.title %></h1>
-
-<div class="card">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src=<%= @item.image %>>
-  </div>
-  <div class="card-content">
-    <span class="item-title activator grey-text text-darken-4"><%= @item.title %></span>
-    <span class="right activator grey-text text-darken-4 card-price"><%= number_to_currency(@item.price) %></span>
-    <div class="add-to-duffel center-align">
-      <%= render partial: @partial %>
+<div id="item-show" class="container site-font">
+  <div class="row">
+    <div class="col s8 center">
+        <img src=<%= @item.image %>>
     </div>
-  </div>
-  <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4"><%= @item.title %><i class="material-icons right">close</i></span>
-    <strong><%= @item.title %></strong>
-    <p><%= @item.description %></p>
+    <div class="col s4">
+      <h1><%= @item.title %></h1>
+      <p><%= @item.description %></p>
+      <p><%= number_to_currency(@item.price) %></p>
+    </div>
+    <div class="admin-btns">
+      <p><%= render partial: @partial %></p>
+      <% if current_user && current_user.admin? %>
+        <p><%= link_to "Edit Item", edit_admin_item_path(@item), class: "black center-align waves-effect waves-light btn site-font" %></p>
+        <p><%= link_to "Delete Item", admin_item_path(@item), method: :delete, class: "black center-align waves-effect waves-light btn site-font" %></p>
+      <% end %>
+    </div>
   </div>
 </div>

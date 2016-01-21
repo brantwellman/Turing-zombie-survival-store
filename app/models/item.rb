@@ -4,6 +4,10 @@ class Item < ActiveRecord::Base
   has_many :order_items
   before_create :set_status
 
+  validates :title, uniqueness: true, presence: true
+  validates :description, presence: true
+  validates_numericality_of :price, greater_than: 0
+
   def set_status
     self.status ||= "active"
   end

@@ -6,16 +6,14 @@ class AuthenticatedUserTest < ActionDispatch::IntegrationTest
     visit items_path
     click_link "Add to Duffel"
 
-    visit "/"
-    assert page.has_content? "Login"
+    visit new_user_path
 
-    click_link "Create Account"
     fill_in "First name", with: "Penney"
     fill_in "Last name", with: "Gadget"
-    fill_in "Address", with: "123 Zombie Lane"
+    fill_in "Address", with: "1510 Blake St"
     fill_in "City", with: "Denver"
     fill_in "State", with: "CO"
-    fill_in "Zipcode", with: "80121"
+    fill_in "Zipcode", with: "80202"
     fill_in "Email", with: "theworldisending@uhoh.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
@@ -32,8 +30,9 @@ class AuthenticatedUserTest < ActionDispatch::IntegrationTest
     visit "/duffel"
     assert page.has_content? item.title
 
-    click_link "Logout"
-    assert page.has_content? "Login"
-    refute page.has_content? "Logout"
+    within ".main-nav" do
+      click_link "Logout"
+    end
+    assert page.has_content? "Prepare yourself..."
   end
 end
