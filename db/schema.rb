@@ -55,14 +55,6 @@ ActiveRecord::Schema.define(version: 20160120232001) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
-  create_table "photos", force: :cascade do |t|
-    t.integer  "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "photos", ["item_id"], name: "index_photos_on_item_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -84,5 +76,4 @@ ActiveRecord::Schema.define(version: 20160120232001) do
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
-  add_foreign_key "photos", "items"
 end

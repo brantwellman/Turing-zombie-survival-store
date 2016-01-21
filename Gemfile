@@ -15,6 +15,7 @@ gem 'material_icons'
 gem 'route_downcaser', '~> 1.2'
 gem 'geocoder'
 gem 'figaro', ">= 1.0.0"
+gem 'stripe'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
