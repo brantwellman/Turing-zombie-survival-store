@@ -18,10 +18,10 @@ FactoryGirl.define do
   factory :user do
     first_name
     last_name
-    address "123 Zombie Ln"
+    address "1510 Blake St"
     city "Denver"
     state "CO"
-    zipcode "80121"
+    zipcode "80202"
     email
     password "password"
     password_confirmation "password"

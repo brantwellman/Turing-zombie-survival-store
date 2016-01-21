@@ -355,6 +355,24 @@ a.brand-logo {
   font-size: 1.2em;
 }
 
+/* Map */
+
+html, body { height: 100%; margin: 0; padding: 0; }
+
+#map {
+  height: 100%;
+  width: 90%;
+  position: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border: solid black;
+  border-style: groove;
+}
+
+.map-key {
+  font-size: 1.8em;
+}
 /* Login */
 
 .create-acct {
@@ -370,7 +388,7 @@ a.brand-logo {
 .rules-card {
   padding-top: 25px;
   width: 80%;
-  height: 80%;
+  height: 2500px;
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: rgba(219, 211, 202, .6);

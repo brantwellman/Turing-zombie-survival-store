@@ -43,6 +43,7 @@ class UsersController < ApplicationController
       :city,
       :state,
       :zipcode,
+      :safe_house,
       :password,
       :password_confirmation)
   end

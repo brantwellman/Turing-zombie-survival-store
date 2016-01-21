@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>ZombieSurvivalStore</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!--Import Google Icon Font-->
   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
@@ -10,6 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -21,6 +25,29 @@
 <% end %>
 
   <!-- Dropdown Setups. Duplicates to account for side-nav -->
+  <ul id="resources-dropdown1" class="dropdown-content">
+    <li><%= link_to "Map", map_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Report an Outbreak", "#" %></li>
+    <li class="divider"></li>
+    <li><%= link_to "The Rules", rules_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Zombie Practice", "#" %></li>
+    <li class="divider"></li>
+  </ul>
+  <ul id="resources-dropdown2" class="dropdown-content">
+    <li><%= link_to "Map", map_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Report an Outbreak", "#" %></li>
+    <li class="divider"></li>
+    <li><%= link_to "The Rules", rules_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Zombie Practice", "#" %></li>
+    <li class="divider"></li>
+  </ul>
+
+
+
   <ul id="category-dropdown1" class="dropdown-content">
     <% all_categories.each do |category| %>
     <li><%= link_to category.title.capitalize, category_path(category.title) %></li>
@@ -68,21 +95,23 @@
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
-        <li><%= link_to "My Duffel", duffel_path %></li>
+        <li><a class="dropdown-button" href="#!" data-activates="resources-dropdown1" data-beloworigin="true">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="category-dropdown1" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><%= link_to "My Duffel", duffel_path %></li>
       </ul>
       <ul class="right side-nav" id="mobile-demo">
         <% if current_user %>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <li><a class="dropdown-button" href="#!" data-activates="account-dropdown2" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="resources-dropdown2" data-beloworigin="true">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
         <% else %>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Create Account", new_user_path %></li>
         <% end %>
-        <li><%= link_to "My Duffel", duffel_path %></li>
         <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="account-dropdown2" data-beloworigin="true">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-button" href="#!" data-activates="category-dropdown2" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><%= link_to "My Duffel", duffel_path %></li>
 
       </ul>
     </div>
