@@ -1,0 +1,566 @@
+/* line 1, /Users/Bwell/turing/2module/projects/zombie_survival_store/app/assets/stylesheets/master.css.scss */
+.background-image {
+  background: url("cracked_paper.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* line 10, /Users/Bwell/turing/2module/projects/zombie_survival_store/app/assets/stylesheets/master.css.scss */
+.hero-image {
+  background: url("/assets/background-img.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* line 19, /Users/Bwell/turing/2module/projects/zombie_survival_store/app/assets/stylesheets/master.css.scss */
+.enter {
+  font-family: "Special Elite";
+  font-size: 45px;
+  color: #C9D1D4;
+  width: 700px;
+  height: 100px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -230px; }
+
+/* line 32, /Users/Bwell/turing/2module/projects/zombie_survival_store/app/assets/stylesheets/master.css.scss */
+a.enter:hover {
+  color: #424647; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+
+
+@font-face {
+  font-family: "Survival Horror";
+  src: url("/assets/survival_horror.ttf");
+}
+
+/* Headers */
+h1 {
+  font-size: 2.5em;
+    font-family: "Special Elite";
+}
+
+h3 {
+  font-family: "Special Elite";
+}
+
+.admin-header {
+  font-size:3em;
+}
+
+.warning-header {
+  float: left;
+}
+
+/* Nav Bar */
+
+.nav-wrapper {
+  background-color: rgb(36, 3, 6);
+}
+
+.nav-wrapper li{
+  padding-right: 20px;
+  font-family: "Special Elite";
+}
+
+a.brand-logo {
+  padding-left: 20px;
+  font-family: "Special Elite";
+}
+
+.dropdown-content {
+  background-color: rgb(36, 3, 6);
+}
+
+.dropdown-content li a{
+  color: white;
+}
+
+.menu-icon {
+  position: relative;
+  left: -20px;
+}
+
+.side-nav {
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.side-nav a {
+  color: rgba(219, 211, 202, 1);
+}
+
+.side-nav a:hover {
+  color: black;
+}
+
+/* Categories Side Bar */
+
+.categories-side-bar {
+  height: 600px;
+  font-family: "Special Elite";
+  display: block;
+  margin-top: 40px;
+}
+
+.category-link {
+  width: 220px;
+  height: 50px;
+  margin-top: 20px;
+  padding-top: 6px;
+}
+
+.category-link a {
+}
+
+.first-link {
+  margin-top: 40px;
+}
+
+  /* Items Section */
+
+.card-title a {
+  color: rgb(36, 3, 6);
+}
+
+.items-column {
+  padding: 10px;
+}
+
+.items-container {
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.index-h1 {
+  font-size: 2.2em;
+}
+
+  /* Item Cards */
+
+.card {
+  width: 250px;
+  height: 320px;
+  display: inline-block;
+  margin: 10px;
+  background-color: rgba(219, 211, 202, .6)
+}
+
+.card-image {
+  margin: 10px;
+}
+
+.card-image img {
+  width: 180px;
+  height: 180px;
+}
+
+.item-title {
+  font-size: 1.1em;
+}
+
+.item-title a:hover {
+  color: rgb(36, 3, 6);
+}
+
+.site-font {
+  font-family: "Special Elite";
+}
+
+.add-to-duffel a{
+  margin-top: 10px;
+}
+
+
+/* Duffel & Individual Past Order */
+
+.cart-image img, .order-image img {
+  height: 100px;
+  width: 100px;
+}
+
+.duffel-table, .order-table {
+    background-color: rgba(219, 211, 202, .6);
+}
+
+.checkout {
+  margin-left: 72%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.table-headers {
+  font-family: "Special Elite";
+  font-size: 1.3em;
+}
+
+.item-header {
+  padding-left: 50px;
+}
+
+.quantity-button {
+  padding: 0px 10px;
+  position: relative;
+  top: 3px;
+  color: black;
+}
+
+.remove-button {
+  position: relative;
+  top: 3px;
+  color: black;
+}
+
+.item-count {
+  margin: 0px 5px;
+  position: relative;
+  left: 9px;
+}
+
+#subtotal {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Admin Orders Index */
+
+.order-status-side-bar {
+  height: 600px;
+  font-family: "Special Elite";
+}
+
+.item-manager {
+  margin-top: 50px;
+}
+
+#user-orders {
+  margin-top: 50px;
+  position: relative;
+  left: -30px;
+}
+
+.user-orders-header {
+  position: relative;
+  left: -30px;
+}
+
+/*Forms*/
+
+#login-form, #user-form, #item-form, #outbreak-form {
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.submit-btn {
+  padding: 10px;
+  margin: 5px;
+}
+
+.form-text {
+  color: black;
+  font-size: 1.2em;
+}
+
+#user-form label,
+#login-form label,
+#item-form label {
+  color: black;
+}
+.dropdown-content li span {
+  color: white;
+}
+.dropdown-content li span:hover {
+  color: black;
+}
+
+#required-field {
+  font-family: "Special Elite";
+  font-weight: bold;
+  width: 50%;
+  font-size: .9em
+}
+
+/*Item Show*/
+
+#item-show {
+  background-color: rgba(219, 211, 202, .6);
+  padding: 15px;
+  margin-top: 100px;
+}
+
+#item-show img{
+  width: 75%;
+  padding-top: 15px;
+}
+/*Flash Notices*/
+
+.flashes {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.6em;
+
+  background: #FFF6BF;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	text-align: center;
+	margin: 10px auto;
+	padding: 5px 20px;
+}
+
+/*User Dashboard*/
+
+.user-card {
+  padding-top: 15px;
+  width: 400px;
+  height: 500px;
+  margin: 10px auto;
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.dashboard-header {
+  margin-bottom: 50px;
+}
+
+.user-name {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.edit-profile-button {
+  margin-top: 100px;
+}
+
+/*Individual Past Order*/
+
+.order-item-table {
+    background-color: rgba(219, 211, 202, .6);
+}
+
+.order-item-title, .item-subtotal, .order-subtotal, .item-price, .order-item-quantity {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+  color: black;
+}
+
+#status-label {
+  position: relative;
+  bottom: -4px;
+}
+
+/*All Past Orders*/
+
+.order-date, .order-price {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.button {
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Map */
+
+html, body { height: 100%; margin: 0; padding: 0; }
+
+#map {
+  height: 100%;
+  width: 90%;
+  position: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border: solid black;
+  border-style: groove;
+}
+
+.map-key {
+  font-size: 1.8em;
+}
+/* Login */
+
+.create-acct {
+  font-size: 1.5em;
+}
+
+.create-acct a {
+  padding-top:4px;
+}
+
+/*Rules Page*/
+
+.rules-card {
+  padding-top: 25px;
+  width: 80%;
+  height: 2500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgba(219, 211, 202, .6);
+  font-family: "Special Elite";
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.zombie-font {
+  font-family: "Survival Horror";
+  font-size: 3em;
+}
+
+.rules-header {
+  font-family: "Survival Horror";
+  font-size: 96px;
+}
+
+#rules-body {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(139, 0, 0);
+}
+
+#rules-item {
+  font-family: "Playfair Display SC", cursive;
+  color: rgb(128, 0, 0);
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+/* Game */
+
+#game-div {
+  width    : 700px;
+  height   : 600px;
+  overflow : hidden;
+  position : relative;
+  margin-bottom: 50px;
+}
+
+#game-iframe {
+  position : absolute;
+  top      : -170px;
+  left     : -290px;
+  width    : 1280px;
+  height   : 1200px;
+ }
+/*
+ * CSS File of Material icons.
+ * CSS code based on:
+ * https://google.github.io/material-design-icons/#icon-font-for-the-web
+ */
+
+
+
+
+
+
+/* Use the font */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/MaterialIcons-Regular-b15db5db832205c97a25ec5a3a933abf8ce3ec734ba960b4deffc582d4590543.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('/assets/MaterialIcons-Regular-15b67505885b83b369db6a3b186026ca36f37cf0f3800f0daab994fd7120da90.woff2') format('woff2'),
+       url('/assets/MaterialIcons-Regular-cf7881fd4d4c4c30e4a730b34cee417df72504228dd55ff767949579b0cc50e4.woff') format('woff'),
+       url('/assets/MaterialIcons-Regular-d4dce8e9d683ae7b7d9cc1c86544a6cd8d2f855fddb02d4328a04815aa704c5d.ttf') format('truetype');
+}
+
+/* Base class */
+.material-icons,
+.mi {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18, .mi.md-18 { font-size: 18px; }
+.material-icons.md-24, .mi.md-24 { font-size: 24px; }
+.material-icons.md-36, .mi.md-36 { font-size: 36px; }
+.material-icons.md-48, .mi.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark, .mi.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive, .mi.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light, .mi.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive, .mi.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* Rules to rotate items */
+.material-icons.r90, .mi.r90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.material-icons.r180, .mi.r180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.material-icons.r270, .mi.r270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.material-icons.flip-horizontal, .mi.flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.material-icons.flip-vertical, .mi.flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
