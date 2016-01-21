@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/map", to: "maps#show"
+  get "/game", to: "games#show"
 end
