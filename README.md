@@ -12,7 +12,10 @@ This Rails application is a marketplace for all your post-apocalypse needs. A us
 
 ### Live Version
 
-You can find a live version of this application on Heroku at: [https://aberzombie-and-fitch.herokuapp.com/](https://aberzombie-and-fitch.herokuapp.com/)
+You can find a live version of this application on Heroku [here](https://aberzombie-and-fitch.herokuapp.com/).
+
+![Aberzombie Main Shopping Page](/app/assets/images/Aberzombie-screenshot.png)
+
 
 ### Setup
 
@@ -30,9 +33,9 @@ The app is integrated with a test version of Stripe for mock-processing of payme
 
 ### Test Suite
 
-The test suite tests the application on multiple levels. To run all of the tests, run `rake test` from the terminal in the main directory of the project. The feature tests (integration tests) rely mainly on the [capybara gem](https://github.com/jnicklas/capybara) for navigating the various application views.
+The test suite tests the application on multiple levels. To run all of the tests, run `rake test` from the terminal in the main directory of the project. The feature tests (integration tests) rely mainly on the [Capybara gem](https://github.com/jnicklas/capybara) for navigating the various application views.
 
-The project also utilizes the [simplecov gem](https://github.com/colszowka/simplecov) for quick statistics on code coverage.
+The project also utilizes the [Simplecov gem](https://github.com/colszowka/simplecov) for quick statistics on code coverage.
 
 ### Dependencies
 
